@@ -51,6 +51,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [httpserverws](./httpserverws) - WebSocket connection interfaces
 - [id](./id) - unique identifier generation and conversion utilities
 - [meta](./meta) - key-value metadata container
+- [runner](./runner) - lifecycle-managed command execution framework
 
 ## 📌 Versioning
 
