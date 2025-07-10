@@ -44,6 +44,7 @@ The repository consists of multiple independent modules, each contained in its o
 
 - [di](./di) - dependency injection contracts
 - [plugin](./plugin) - core plugin interfaces
+- [codec](./codec) - generic serialization interface
 - [httpserver](./httpserver) - HTTP server contracts, handlers, routing, middleware
 - [httpserverstatic](./httpserverstatic) - Static handler interfaces
 - [httpserverws](./httpserverws) - WebSocket connection interfaces
