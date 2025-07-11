@@ -51,6 +51,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [httpserverstatic](./httpserverstatic) - Static handler interfaces
 - [httpserverws](./httpserverws) - WebSocket connection interfaces
 - [id](./id) - unique identifier generation and conversion utilities
+- [json](./json) - JSON codec wrapper for serialization and streaming
 - [meta](./meta) - key-value metadata container
 - [plugin](./plugin) - core plugin interfaces
 - [runner](./runner) - lifecycle-managed command execution framework
