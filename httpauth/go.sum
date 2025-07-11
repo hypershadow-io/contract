@@ -1,0 +1,8 @@
+github.com/hypershadow-io/contract/auth v1.0.0 h1:lvuuLHnI88qsjxBSnqZkKmgXDHOxC/R9R2txWcyVwgY=
+github.com/hypershadow-io/contract/auth v1.0.0/go.mod h1:CXr6euCE6ZWDxjECfkdIf+8RSyGDSVd7KeFfcCjnGqo=
+github.com/hypershadow-io/contract/entity v1.0.0 h1:p8trCeTyMS7S1MfacyZHMeKEZhfEW5Xxf6g3FLjVLOE=
+github.com/hypershadow-io/contract/entity v1.0.0/go.mod h1:taEyKU4waJ5wGuFlrgpRH5g4P9r517kz+N4qSYln2Ko=
+github.com/hypershadow-io/contract/httpserver v1.0.0 h1:W+YZtPBJr4TCJs+c6q0e2ucUP92zY3nrEDjFAomqQqA=
+github.com/hypershadow-io/contract/httpserver v1.0.0/go.mod h1:5AHQjIU2ExI97XmNcBHjpjAdLpL5z742XIRYd2kFwjU=
+github.com/hypershadow-io/contract/meta v1.0.0 h1:rR1LR9o8qVY237NqKoVBCToKEf2d8D8V9iQqCKOTWjY=
+github.com/hypershadow-io/contract/meta v1.0.0/go.mod h1:6/TTIgfnUs4/D+3q4gZOwpglr1GVQ6jYeZTlvkywTPk=

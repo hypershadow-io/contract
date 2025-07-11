@@ -52,6 +52,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [fmt](./fmt) - customizable fmt interface
 - [hook](./hook) - event hook system for subscribing to and modifying operations in other plugins
 - [hookimpl](./hookimpl) - default implementation of hook registry and provider
+- [httpauth](./httpauth) - dynamic scope builders for HTTP-based entity access control
 - [httpserver](./httpserver) - HTTP server contracts, handlers, routing, middleware
 - [httpserverstatic](./httpserverstatic) - Static handler interfaces
 - [httpserverws](./httpserverws) - WebSocket connection interfaces
