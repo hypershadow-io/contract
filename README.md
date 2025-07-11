@@ -50,6 +50,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [ebimpl](./ebimpl) - default implementation of the error builder interface
 - [entity](./entity) - base entity types and identifiers
 - [fmt](./fmt) - customizable fmt interface
+- [hook](./hook) - event hook system for subscribing to and modifying operations in other plugins
 - [httpserver](./httpserver) - HTTP server contracts, handlers, routing, middleware
 - [httpserverstatic](./httpserverstatic) - Static handler interfaces
 - [httpserverws](./httpserverws) - WebSocket connection interfaces
