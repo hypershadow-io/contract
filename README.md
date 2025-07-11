@@ -42,15 +42,16 @@ The repository consists of multiple independent modules, each contained in its o
 
 ## ✅ List of Available Packages
 
-- [di](./di) - dependency injection contracts
-- [plugin](./plugin) - core plugin interfaces
 - [codec](./codec) - generic serialization interface
 - [crypt](./crypt) - cryptographic interface
+- [di](./di) - dependency injection contracts
+- [entity](./entity) - base entity types and identifiers
 - [httpserver](./httpserver) - HTTP server contracts, handlers, routing, middleware
 - [httpserverstatic](./httpserverstatic) - Static handler interfaces
 - [httpserverws](./httpserverws) - WebSocket connection interfaces
 - [id](./id) - unique identifier generation and conversion utilities
 - [meta](./meta) - key-value metadata container
+- [plugin](./plugin) - core plugin interfaces
 - [runner](./runner) - lifecycle-managed command execution framework
 
 ## 📌 Versioning
