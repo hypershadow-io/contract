@@ -47,6 +47,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [crypt](./crypt) - cryptographic interface
 - [di](./di) - dependency injection contracts
 - [eb](./eb) - centralized error builder
+- [ebimpl](./ebimpl) - default implementation of the error builder interface
 - [entity](./entity) - base entity types and identifiers
 - [fmt](./fmt) - customizable fmt interface
 - [httpserver](./httpserver) - HTTP server contracts, handlers, routing, middleware
