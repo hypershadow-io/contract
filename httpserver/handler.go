@@ -32,7 +32,7 @@ func HandleBody[In, Out any](
 }
 
 // HandleAny creates a request handler that attempts to parse input from any source
-// (path parameters, body and query string) into the input struct.
+// (path -> body -> query) into the input struct.
 // Useful when input can come from multiple places.
 // It invokes the callback with the parsed data and sends the output as a response.
 func HandleAny[In, Out any](

@@ -44,7 +44,7 @@ type (
 		// The expected body format (JSON, form, etc.) depends on Content-Type.
 		ParseBody(in any) error
 
-		// ParseAny attempts to populate the struct from path, body, and query data.
+		// ParseAny attempts to populate the struct from (path -> body -> query) data.
 		// Useful for compact handlers where inputs may come from multiple sources.
 		ParseAny(in any) error
 
