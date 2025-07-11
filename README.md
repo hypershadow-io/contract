@@ -42,6 +42,7 @@ The repository consists of multiple independent modules, each contained in its o
 
 ## ✅ List of Available Packages
 
+- [auth](./auth) - token-based authentication and scoped access control
 - [codec](./codec) - generic serialization interface
 - [crypt](./crypt) - cryptographic interface
 - [di](./di) - dependency injection contracts
