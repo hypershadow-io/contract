@@ -47,6 +47,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [crypt](./crypt) - cryptographic interface
 - [di](./di) - dependency injection contracts
 - [entity](./entity) - base entity types and identifiers
+- [fmt](./fmt) - customizable fmt interface
 - [httpserver](./httpserver) - HTTP server contracts, handlers, routing, middleware
 - [httpserverstatic](./httpserverstatic) - Static handler interfaces
 - [httpserverws](./httpserverws) - WebSocket connection interfaces
