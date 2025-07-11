@@ -58,6 +58,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [meta](./meta) - key-value metadata container
 - [plugin](./plugin) - core plugin interfaces
 - [runner](./runner) - lifecycle-managed command execution framework
+- [utilslice](./utilslice) - generic slice transformation helpers
 
 ## 📌 Versioning
 
