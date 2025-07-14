@@ -1,5 +1,5 @@
-github.com/hypershadow-io/contract/agentmodel v1.0.0 h1:qDJQrF9AmlgTF5cE70MdvjWaNhIcMY/RDlLlxp1eAJA=
-github.com/hypershadow-io/contract/agentmodel v1.0.0/go.mod h1:Hns2Lz6lrDRPl5IllUfgapfGUu9eY3MrBdzfJCVaUuY=
+github.com/hypershadow-io/contract/agent/model v1.0.0 h1:rV91917b22BMEgLpdY3sfzqRoFieGryGPEZowugqa74=
+github.com/hypershadow-io/contract/agent/model v1.0.0/go.mod h1:726YH5LZt9ru+vi2z/H2VIaUY0TB5wdhxwU/id8E3HA=
 github.com/hypershadow-io/contract/db v1.0.0 h1:mhqlmy+ZcvUG+M2Rtzo5VEF4f/HgD9DWaTC2t3mosis=
 github.com/hypershadow-io/contract/db v1.0.0/go.mod h1:JoagDFQ3r5JOg7Ddpm0pRegr11/X27/Ka+KOWYghGaE=
 github.com/hypershadow-io/contract/eb v1.0.0 h1:/1FuLiG3soRQd/ETkNNexLlbwkneyXoQZeK3WAVRQOI=
