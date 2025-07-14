@@ -47,6 +47,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [codec](./codec) - generic serialization interface
 - [crypt](./crypt) - cryptographic interface
 - [db](./db) - core DB interface
+- [dbhook](./dbhook) - event hook system for database query builders
 - [di](./di) - dependency injection contracts
 - [eb](./eb) - centralized error builder
 - [ebimpl](./ebimpl) - default implementation of the error builder interface
