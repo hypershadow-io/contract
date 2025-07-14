@@ -64,4 +64,7 @@ const (
 	StatusLoopDetected                  = 508
 	StatusNotExtended                   = 510
 	StatusNetworkAuthenticationRequired = 511
+
+	HeaderAuthorization = "Authorization"
+	HeaderContentType   = "Content-Type"
 )
