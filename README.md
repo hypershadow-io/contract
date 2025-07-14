@@ -54,6 +54,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [hookimpl](./hookimpl) - default implementation of hook registry and provider
 - [httpauth](./httpauth) - dynamic scope builders for HTTP-based entity access control
 - [httpserver](./httpserver) - HTTP server contracts, handlers, routing, middleware
+- [httpservercors](./httpservercors) - CORS handler builder for HTTP server
 - [httpserverstatic](./httpserverstatic) - Static handler interfaces
 - [httpserverws](./httpserverws) - WebSocket connection interfaces
 - [id](./id) - unique identifier generation and conversion utilities
