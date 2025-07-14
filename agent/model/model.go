@@ -1,4 +1,4 @@
-package agentmodel
+package model
 
 import (
 	"github.com/hypershadow-io/contract/meta"

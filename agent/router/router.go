@@ -1,7 +1,7 @@
-package agent
+package router
 
 import "github.com/hypershadow-io/contract/httpserver"
 
-// RouterBuilder defines the internal agent router builder interface,
+// Builder defines the internal agent router builder interface,
 // used for constructing and organizing HTTP routes within the plugin system.
-type RouterBuilder httpserver.RouterBuilder
+type Builder httpserver.RouterBuilder

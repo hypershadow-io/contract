@@ -42,8 +42,9 @@ The repository consists of multiple independent modules, each contained in its o
 
 ## ✅ List of Available Packages
 
-- [agent](./agent) - defines Agent interface
-- [agentmodel](./agentmodel) - defines global Agent model
+- [agent](./agent) - defines all Agent entities
+    - [agent/model](./agent/model) - defines global Agent model
+    - [agent/router](./agent/router) - defines internal Agent router
 - [api](./api) - common public API interface
 - [auth](./auth) - token-based authentication and scoped access control
 - [codec](./codec) - generic serialization interface

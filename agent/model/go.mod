@@ -1,4 +1,4 @@
-module github.com/hypershadow-io/contract/agentmodel
+module github.com/hypershadow-io/contract/agent/model
 
 go 1.24.0
 

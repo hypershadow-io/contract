@@ -3,6 +3,8 @@ package agent
 import (
 	"context"
 
+	"github.com/hypershadow-io/contract/agentmodel"
+	"github.com/hypershadow-io/contract/entity"
 	"github.com/hypershadow-io/contract/hook"
 	"github.com/hypershadow-io/contract/qb"
 )
@@ -10,10 +12,10 @@ import (
 // Client defines the base interface for working with Agent.
 type Client interface {
 	// ModelHook returns a mutator registry for agent models associated with the given plugin ID.
-	ModelHook(pluginID string) hook.Mutator[Model]
+	ModelHook(pluginID string) hook.Mutator[agentmodel.Model]
 
 	// ModelEvent returns an event registry for agent models associated with the given plugin ID.
-	ModelEvent(pluginID string) hook.Event[Model]
+	ModelEvent(pluginID string) hook.Event[agentmodel.Model]
 
 	// SQLSelectHook returns a mutator registry for SELECT SQL queries related to agents.
 	SQLSelectHook(pluginID string) hook.Mutator[qb.SelectQuery]
@@ -33,3 +35,6 @@ type Client interface {
 	// IDToContext creates a new context with the given agent ID embedded in it.
 	IDToContext(c context.Context, agentID int64) context.Context
 }
+
+// EntityType is the global identifier for the agent entity type.
+const EntityType entity.Type = "agent"
