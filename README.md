@@ -46,6 +46,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [auth](./auth) - token-based authentication and scoped access control
 - [codec](./codec) - generic serialization interface
 - [crypt](./crypt) - cryptographic interface
+- [db](./db) - core DB interface
 - [di](./di) - dependency injection contracts
 - [eb](./eb) - centralized error builder
 - [ebimpl](./ebimpl) - default implementation of the error builder interface
