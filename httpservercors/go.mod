@@ -2,4 +2,4 @@ module github.com/hypershadow-io/contract/httpservercors
 
 go 1.24.0
 
-require github.com/hypershadow-io/contract/httpserver v1.0.1
+require github.com/hypershadow-io/contract/httpserver v1.0.2
