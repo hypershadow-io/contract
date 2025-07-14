@@ -63,6 +63,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [json](./json) - JSON codec wrapper for serialization and streaming
 - [meta](./meta) - key-value metadata container
 - [plugin](./plugin) - core plugin interfaces
+- [qb](./qb) – query builder interfaces
 - [runner](./runner) - lifecycle-managed command execution framework
 - [utiliter](./utiliter) - generic iterator transformation helpers
 - [utilslice](./utilslice) - generic slice transformation helpers
