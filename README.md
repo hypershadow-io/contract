@@ -43,6 +43,8 @@ The repository consists of multiple independent modules, each contained in its o
 ## ✅ List of Available Packages
 
 - [agent](./agent) - defines all Agent entities
+    - [agent/find](./agent/find) - collection of interfaces for searching Agent models
+        - [agent/find/byid](./agent/find/byid) - search for an Agent by its ID
     - [agent/model](./agent/model) - defines global Agent model
     - [agent/router](./agent/router) - defines internal Agent router
 - [api](./api) - common public API interface
