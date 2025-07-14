@@ -42,6 +42,7 @@ The repository consists of multiple independent modules, each contained in its o
 
 ## ✅ List of Available Packages
 
+- [agent](./agent) - defines Agent interface
 - [api](./api) - common public API interface
 - [auth](./auth) - token-based authentication and scoped access control
 - [codec](./codec) - generic serialization interface
