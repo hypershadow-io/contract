@@ -1,4 +1,4 @@
-package agent
+package agenttoken
 
 import (
 	"github.com/hypershadow-io/contract/entity"
