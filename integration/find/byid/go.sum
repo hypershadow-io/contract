@@ -1,0 +1,4 @@
+github.com/hypershadow-io/contract/integration/model v1.0.0 h1:Ft+C4P9gieRrjbDCTSQmddShlfklBqEUVrrbd6tATco=
+github.com/hypershadow-io/contract/integration/model v1.0.0/go.mod h1:kvgRGeAAT7qGPHEDLHZuL0vDo2ctc5qcc5o/+3Z87zI=
+github.com/hypershadow-io/contract/meta v1.0.0 h1:rR1LR9o8qVY237NqKoVBCToKEf2d8D8V9iQqCKOTWjY=
+github.com/hypershadow-io/contract/meta v1.0.0/go.mod h1:6/TTIgfnUs4/D+3q4gZOwpglr1GVQ6jYeZTlvkywTPk=
