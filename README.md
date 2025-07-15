@@ -86,7 +86,8 @@ The repository consists of multiple independent modules, each contained in its o
 - [meta](./meta) - key-value metadata container
 - [operation](./operation) - defines base Operation interface
     - [operation/find](./operation/find) - collection of interfaces for searching Operation models
-        - [operation/find/byid](./operation/find/byids) - search for an Operations by its IDs
+        - [operation/find/byid](./operation/find/byid) - search for an Operation by its ID
+        - [operation/find/byids](./operation/find/byids) - search for an Operations by its IDs
     - [operation/hook](./operation/hook) - Operation hook client interface
     - [operation/model](./operation/model) - defines global Operation model
 - [plugin](./plugin) - core plugin interfaces
