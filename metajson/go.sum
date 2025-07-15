@@ -1,0 +1,6 @@
+github.com/hypershadow-io/contract/codec v1.0.0 h1:uLoTwP4d/0pJNVes/W3EPJkq3PR4S2N6jeVWwmMgAwU=
+github.com/hypershadow-io/contract/codec v1.0.0/go.mod h1:ILMUjfJxpdlfAc7RE2rQ/Va0smSrXcyr5jEB5p84p9w=
+github.com/hypershadow-io/contract/json v1.0.0 h1:oAmrDHhwb/1UgVL4gJzT2wkmNjSaYqTRRM88uISNBE0=
+github.com/hypershadow-io/contract/json v1.0.0/go.mod h1:jike2/Mw6JFf/QHLaq8H7RRPZw6Eu1nulLb4kqlSU+4=
+github.com/hypershadow-io/contract/meta v1.0.0 h1:rR1LR9o8qVY237NqKoVBCToKEf2d8D8V9iQqCKOTWjY=
+github.com/hypershadow-io/contract/meta v1.0.0/go.mod h1:6/TTIgfnUs4/D+3q4gZOwpglr1GVQ6jYeZTlvkywTPk=
