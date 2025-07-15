@@ -78,6 +78,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [httpserverws](./httpserverws) - WebSocket connection interfaces
 - [id](./id) - unique identifier generation and conversion utilities
 - [integration](./integration) - defines base Integration interface
+    - [integration/hook](./integration/hook) - Integration hook client interface
     - [integration/model](./integration/model) - defines global Integration model
 - [json](./json) - JSON codec wrapper for serialization and streaming
 - [meta](./meta) - key-value metadata container
