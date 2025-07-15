@@ -1,4 +1,4 @@
-package agent
+package hook
 
 import (
 	"github.com/hypershadow-io/contract/agent/model"
