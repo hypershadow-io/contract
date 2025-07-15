@@ -51,6 +51,8 @@ The repository consists of multiple independent modules, each contained in its o
 - [agenttoken](./agenttoken)
     - [agenttoken/hook](./agenttoken/hook) - AgentToken hook client interface
     - [agenttoken/model](./agenttoken/model) - defines global AgentToken model
+    - [agenttoken/transport](./agenttoken/transport) - network-safe representation and utilities for AgentToken
+      transport
 - [api](./api) - common public API interface
 - [auth](./auth) - token-based authentication and scoped access control
 - [codec](./codec) - generic serialization interface
