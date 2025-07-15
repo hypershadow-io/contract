@@ -91,6 +91,7 @@ The repository consists of multiple independent modules, each contained in its o
     - [operation/hook](./operation/hook) - Operation hook client interface
     - [operation/model](./operation/model) - defines global Operation model
 - [organization](./organization) - defines base Organization interface
+    - [organization/httprouter](./organization/httprouter) - defines internal Organization HTTP router
 - [plugin](./plugin) - core plugin interfaces
 - [qb](./qb) – query builder interfaces
 - [runner](./runner) - lifecycle-managed command execution framework
