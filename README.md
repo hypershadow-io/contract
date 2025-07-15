@@ -51,6 +51,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [agenttoken](./agenttoken) - defines base AgentToken interface
     - [agenttoken/find](./agenttoken/find) - collection of interfaces for searching AgentToken models
         - [agenttoken/find/byid](./agenttoken/find/byid) - search for an AgentToken by its ID
+        - [agenttoken/find/bylookupkey](./agenttoken/find/bylookupkey) - search for an AgentToken by its LookupKey
     - [agenttoken/create](./agenttoken/create) - collection of interfaces for creates AgentToken models
         - [agenttoken/create/fromparams](./agenttoken/create/fromparams) - creates AgentToken from raw input parameters
     - [agenttoken/hook](./agenttoken/hook) - AgentToken hook client interface
