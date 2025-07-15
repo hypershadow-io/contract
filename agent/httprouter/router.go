@@ -1,4 +1,4 @@
-package router
+package httprouter
 
 import "github.com/hypershadow-io/contract/httpserver"
 

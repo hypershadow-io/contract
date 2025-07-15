@@ -1,4 +1,4 @@
-module github.com/hypershadow-io/contract/agent/router
+module github.com/hypershadow-io/contract/agent/httprouter
 
 go 1.24.0
 
