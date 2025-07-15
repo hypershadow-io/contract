@@ -85,6 +85,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [json](./json) - JSON codec wrapper for serialization and streaming
 - [meta](./meta) - key-value metadata container
 - [operation](./operation) - defines base Operation interface
+    - [operation/hook](./operation/hook) - Operation hook client interface
     - [operation/model](./operation/model) - defines global Operation model
 - [plugin](./plugin) - core plugin interfaces
 - [qb](./qb) – query builder interfaces
