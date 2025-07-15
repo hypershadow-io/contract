@@ -1,18 +1,18 @@
 package hook
 
 import (
-	"github.com/hypershadow-io/contract/agenttoken/model"
+	"github.com/hypershadow-io/contract/apitoken/model"
 	"github.com/hypershadow-io/contract/hook"
 	"github.com/hypershadow-io/contract/qb"
 )
 
-// Client defines the hook-aware client interface for working with AgentToken logic.
+// Client defines the hook-aware client interface for working with API token logic.
 // Provides access to model-level and SQL-level mutators and event hooks.
 type Client interface {
-	// ModelHook returns a mutator registry for agent tokens associated with the given plugin ID.
+	// ModelHook returns a mutator registry for API tokens associated with the given plugin ID.
 	ModelHook(pluginID string) hook.Mutator[model.Model]
 
-	// ModelEvent returns an event registry for agent tokens associated with the given plugin ID.
+	// ModelEvent returns an event registry for API tokens associated with the given plugin ID.
 	ModelEvent(pluginID string) hook.Event[model.Model]
 
 	// SQLSelectHook returns a mutator registry for SELECT SQL queries associated with the given plugin ID.
