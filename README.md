@@ -48,7 +48,7 @@ The repository consists of multiple independent modules, each contained in its o
     - [agent/hook](./agent/hook) - Agent hook client interface
     - [agent/model](./agent/model) - defines global Agent model
     - [agent/router](./agent/router) - defines internal Agent router
-- [agenttoken](./agenttoken)
+- [agenttoken](./agenttoken) - defines base AgentToken interface
     - [agenttoken/hook](./agenttoken/hook) - AgentToken hook client interface
     - [agenttoken/model](./agenttoken/model) - defines global AgentToken model
     - [agenttoken/transport](./agenttoken/transport) - network-safe representation and utilities for AgentToken
