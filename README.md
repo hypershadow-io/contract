@@ -90,6 +90,7 @@ The repository consists of multiple independent modules, each contained in its o
         - [operation/find/byids](./operation/find/byids) - search for an Operations by its IDs
     - [operation/hook](./operation/hook) - Operation hook client interface
     - [operation/model](./operation/model) - defines global Operation model
+- [organization](./organization) - defines base Organization interface
 - [plugin](./plugin) - core plugin interfaces
 - [qb](./qb) – query builder interfaces
 - [runner](./runner) - lifecycle-managed command execution framework
