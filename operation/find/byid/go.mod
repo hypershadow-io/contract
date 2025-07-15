@@ -1,4 +1,4 @@
-module github.com/hypershadow-io/contract/integration/find/byid
+module github.com/hypershadow-io/contract/operation/find/byid
 
 go 1.24.0
 
