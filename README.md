@@ -49,11 +49,11 @@ The repository consists of multiple independent modules, each contained in its o
     - [agent/model](./agent/model) - defines global Agent model
     - [agent/router](./agent/router) - defines internal Agent router
 - [agenttoken](./agenttoken) - defines base AgentToken interface
+    - [agenttoken/create](./agenttoken/create) - collection of interfaces for creates AgentToken models
+        - [agenttoken/create/fromparams](./agenttoken/create/fromparams) - creates AgentToken from raw input parameters
     - [agenttoken/find](./agenttoken/find) - collection of interfaces for searching AgentToken models
         - [agenttoken/find/byid](./agenttoken/find/byid) - search for an AgentToken by its ID
         - [agenttoken/find/bylookupkey](./agenttoken/find/bylookupkey) - search for an AgentToken by its LookupKey
-    - [agenttoken/create](./agenttoken/create) - collection of interfaces for creates AgentToken models
-        - [agenttoken/create/fromparams](./agenttoken/create/fromparams) - creates AgentToken from raw input parameters
     - [agenttoken/hook](./agenttoken/hook) - AgentToken hook client interface
     - [agenttoken/model](./agenttoken/model) - defines global AgentToken model
     - [agenttoken/transport](./agenttoken/transport) - network-safe representation and utilities for AgentToken
