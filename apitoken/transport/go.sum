@@ -1,0 +1,4 @@
+github.com/hypershadow-io/contract/apitoken/model v1.0.0 h1:c1JWRKqIPgS6FFHOH9kiflC26MqZYwB3iU/7zRolbwU=
+github.com/hypershadow-io/contract/apitoken/model v1.0.0/go.mod h1:uOSsSlMszFmw9XA7p4R9TTzEFVuEAr7z7hFhryMONRs=
+github.com/hypershadow-io/contract/meta v1.0.0 h1:rR1LR9o8qVY237NqKoVBCToKEf2d8D8V9iQqCKOTWjY=
+github.com/hypershadow-io/contract/meta v1.0.0/go.mod h1:6/TTIgfnUs4/D+3q4gZOwpglr1GVQ6jYeZTlvkywTPk=
