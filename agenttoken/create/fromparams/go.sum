@@ -1,0 +1,4 @@
+github.com/hypershadow-io/contract/agenttoken/model v1.0.0 h1:jQubynIiBNDlZ4tid8Wh9ycrLqVZnsYEdvWB3M9r9P4=
+github.com/hypershadow-io/contract/agenttoken/model v1.0.0/go.mod h1:Ymcg2t4bbqcmrg7GZqKjJHiyLAGXbt8OLvnDz+MUzDg=
+github.com/hypershadow-io/contract/meta v1.0.0 h1:rR1LR9o8qVY237NqKoVBCToKEf2d8D8V9iQqCKOTWjY=
+github.com/hypershadow-io/contract/meta v1.0.0/go.mod h1:6/TTIgfnUs4/D+3q4gZOwpglr1GVQ6jYeZTlvkywTPk=
