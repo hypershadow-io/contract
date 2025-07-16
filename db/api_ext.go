@@ -4,7 +4,6 @@ import (
 	"context"
 	"iter"
 
-	"github.com/hypershadow-io/contract/eb"
 	"github.com/hypershadow-io/contract/utiliter"
 )
 
@@ -13,7 +12,7 @@ import (
 func FindOne[T any](
 	c context.Context,
 	instance Instance,
-	errBuilder eb.LazyBuilder,
+	errBuilder func() error,
 	proto T,
 	query Query,
 ) (res_ T, found_ bool, err_ error) {
@@ -29,7 +28,7 @@ func FindOne[T any](
 func FindIterator[T any](
 	c context.Context,
 	instance Instance,
-	errBuilder eb.LazyBuilder,
+	errBuilder func() error,
 	proto T,
 	query Query,
 ) iter.Seq2[T, error] {

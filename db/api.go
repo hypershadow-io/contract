@@ -4,8 +4,6 @@ import (
 	"context"
 	"io/fs"
 	"iter"
-
-	"github.com/hypershadow-io/contract/eb"
 )
 
 type (
@@ -77,7 +75,7 @@ type (
 		// Returns found = false if no rows match.
 		FindOne(
 			c context.Context,
-			errBuilder eb.LazyBuilder,
+			errBuilder func() error,
 			proto any,
 			query Query,
 		) (res_ any, found_ bool, err_ error)
@@ -85,7 +83,7 @@ type (
 		// FindIterator executes a SELECT query and returns an iterator of results.
 		FindIterator(
 			c context.Context,
-			errBuilder eb.LazyBuilder,
+			errBuilder func() error,
 			proto any,
 			query Query,
 		) iter.Seq2[any, error]
