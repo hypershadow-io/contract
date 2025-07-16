@@ -3,8 +3,6 @@ package cache
 import (
 	"context"
 	"time"
-
-	"github.com/hypershadow-io/contract/eb"
 )
 
 type (
@@ -12,7 +10,7 @@ type (
 	Instance interface {
 		// Get retrieves a value from the cache by key.
 		// Returns the value, a boolean indicating whether it was found, and an error if occurred.
-		Get(c context.Context, errBuilder eb.LazyBuilder, key any) (res_ any, found_ bool, err_ error)
+		Get(c context.Context, errBuilder func() error, key any) (res_ any, found_ bool, err_ error)
 
 		// Set adds a value to the cache under the specified key with optional configuration.
 		Set(c context.Context, key any, value any, opts ...SetOption) error
