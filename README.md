@@ -67,6 +67,7 @@ The repository consists of multiple independent modules, each contained in its o
     - [apitoken/transport](./apitoken/transport) - network-safe representation and utilities for API token transport
 - [auth](./auth) - token-based authentication and scoped access control
 - [cache](./cache) - defines base cache interface
+    - [cache/local](./cache/local) - in-memory cache implementation
 - [codec](./codec) - generic serialization interface
 - [crypt](./crypt) - cryptographic interface
 - [db](./db) - core DB interface
