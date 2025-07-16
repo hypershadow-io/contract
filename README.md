@@ -77,6 +77,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [eb](./eb) - centralized error builder
 - [ebimpl](./ebimpl) - default implementation of the error builder interface
 - [entity](./entity) - base entity types and identifiers
+- [field](./field) - defines field abstractions
 - [fmt](./fmt) - customizable fmt interface
 - [hook](./hook) - event hook system for subscribing to and modifying operations in other plugins
 - [hookimpl](./hookimpl) - default implementation of hook registry and provider
