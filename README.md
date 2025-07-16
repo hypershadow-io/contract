@@ -65,6 +65,7 @@ The repository consists of multiple independent modules, each contained in its o
     - [apitoken/hook](./apitoken/hook) - API token hook client interface
     - [apitoken/model](./apitoken/model) - defines global API token model
     - [apitoken/transport](./apitoken/transport) - network-safe representation and utilities for API token transport
+- [archive](./archive) - defines base archiving interface for entity-based storage
 - [auth](./auth) - token-based authentication and scoped access control
 - [cache](./cache) - defines base cache interface
     - [cache/local](./cache/local) - in-memory cache implementation
