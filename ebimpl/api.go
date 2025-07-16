@@ -15,6 +15,16 @@ import (
 // Initializes an empty wrap stack and prepares the builder for fluent-style chaining.
 func Make[E error]() Builder[E] { return Builder[E]{wrapped: make([]error, 0, 1)} }
 
+// Wrap wraps the given base error into the provided error builder.
+// If the base error is already an eb.Builder, the new builder is added as a wrap to it.
+// Otherwise, the base error is added as a wrap to the new builder.
+func Wrap(base error, err eb.Builder) eb.Builder {
+	if bb, ok := base.(eb.Builder); ok {
+		return bb.AddWrap(err)
+	}
+	return err.AddWrap(base)
+}
+
 // Builder is a generic error builder used to construct structured errors of type E.
 // Typically used via the [eb.Builder] interface.
 type Builder[E error] struct {
