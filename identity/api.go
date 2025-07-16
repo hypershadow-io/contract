@@ -12,13 +12,13 @@ type Identification interface {
 	GetDescription() string
 }
 
-// Identifiable is a base implementation of the Identification interface.
-type Identifiable struct {
+// Model is a base implementation of the Identification interface.
+type Model struct {
 	Key         string `json:"key"`
 	Name        string `json:"name"`
 	Description string `json:"description"`
 }
 
-func (a Identifiable) GetKey() string         { return a.Key }
-func (a Identifiable) GetName() string        { return a.Name }
-func (a Identifiable) GetDescription() string { return a.Description }
+func (a Model) GetKey() string         { return a.Key }
+func (a Model) GetName() string        { return a.Name }
+func (a Model) GetDescription() string { return a.Description }
