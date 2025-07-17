@@ -105,6 +105,7 @@ The repository consists of multiple independent modules, each contained in its o
         - [operation/find/byids](./operation/find/byids) - search for an Operations by its IDs
     - [operation/hook](./operation/hook) - Operation hook client interface
     - [operation/model](./operation/model) - defines global Operation model
+    - [operation/schema](./operation/schema) - defines Schema interface for Operation structure
 - [organization](./organization) - defines base Organization interface
     - [organization/httprouter](./organization/httprouter) - defines internal Organization HTTP router
 - [pager](./pager) - defines Pager abstractions
