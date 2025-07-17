@@ -69,7 +69,8 @@ The repository consists of multiple independent modules, each contained in its o
 - [auth](./auth) - token-based authentication and scoped access control
 - [cache](./cache) - defines base cache interface
     - [cache/local](./cache/local) - in-memory cache implementation
-- [codec](./codec) - generic serialization interface
+- [choice](./choice) - defines base Choice abstractions
+- [codec](./codec) - defines base serialization interface
 - [crypt](./crypt) - cryptographic interface
 - [db](./db) - core DB interface
 - [dbhook](./dbhook) - event hook system for database query builders
@@ -105,8 +106,8 @@ The repository consists of multiple independent modules, each contained in its o
     - [operation/model](./operation/model) - defines global Operation model
 - [organization](./organization) - defines base Organization interface
     - [organization/httprouter](./organization/httprouter) - defines internal Organization HTTP router
-- [pager](./pager) - defines pager abstractions
-- [plugin](./plugin) - core plugin interfaces
+- [pager](./pager) - defines Pager abstractions
+- [plugin](./plugin) - core Plugin interfaces
 - [qb](./qb) – query builder interfaces
 - [runner](./runner) - lifecycle-managed command execution framework
 - [utiliter](./utiliter) - generic iterator transformation helpers
