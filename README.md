@@ -78,7 +78,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [ebimpl](./ebimpl) - default implementation of the error builder interface
 - [entity](./entity) - base entity types and identifiers
 - [field](./field) - defines field abstractions
-- [fmt](./fmt) - customizable fmt interface
+- [fmt](./fmt) - defines customizable fmt interface
 - [hook](./hook) - event hook system for subscribing to and modifying operations in other plugins
 - [hookimpl](./hookimpl) - default implementation of hook registry and provider
 - [httpauth](./httpauth) - dynamic scope builders for HTTP-based entity access control
@@ -104,6 +104,7 @@ The repository consists of multiple independent modules, each contained in its o
     - [operation/model](./operation/model) - defines global Operation model
 - [organization](./organization) - defines base Organization interface
     - [organization/httprouter](./organization/httprouter) - defines internal Organization HTTP router
+- [pager](./pager) - defines pager abstractions
 - [plugin](./plugin) - core plugin interfaces
 - [qb](./qb) – query builder interfaces
 - [runner](./runner) - lifecycle-managed command execution framework
