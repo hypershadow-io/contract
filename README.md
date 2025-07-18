@@ -70,6 +70,8 @@ The repository consists of multiple independent modules, each contained in its o
 - [auth](./auth) - token-based authentication and scoped access control
     - [auth/scope](./auth/scope) - defines access scopes for authorization
     - [auth/token](./auth/token) - defines the token interfaces
+        - [auth/token/codec](./auth/token/codec) - defines interface for encoding/decoding Auth tokens
+        - [auth/token/ctx](./auth/token/ctx) - defines interface for storing/retrieving Auth tokens in context
 - [cache](./cache) - defines base cache interface
     - [cache/local](./cache/local) - in-memory cache implementation
 - [choice](./choice) - defines base Choice abstractions

@@ -4,7 +4,7 @@ import (
 	"context"
 )
 
-// Client defines the base interface for working with Agent.
+// Client defines the interface for storing/retrieving Agent ID from context.
 type Client interface {
 	// IDFromContext extracts the agent ID from the given context.
 	IDFromContext(c context.Context) int64
