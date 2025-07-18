@@ -1,4 +1,4 @@
-module github.com/hypershadow-io/contract/integration/schemaimpl
+module github.com/hypershadow-io/contract/integration/schema/impl
 
 go 1.24.0
 

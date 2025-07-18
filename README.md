@@ -102,7 +102,8 @@ The repository consists of multiple independent modules, each contained in its o
     - [integration/hook](./integration/hook) - Integration hook client interface
     - [integration/model](./integration/model) - defines global Integration model
     - [integration/schema](./integration/schema) - defines Schema interface for Integration structure
-    - [integration/schemaimpl](./integration/schemaimpl) - defines base implementation of Integration Schema interface
+        - [integration/schema/impl](./integration/schema/impl) - defines base implementation of Integration Schema
+          interface
 - [json](./json) - JSON codec wrapper for serialization and streaming
 - [meta](./meta) - key-value metadata container
 - [metainfo](./metainfo) - defines base MetaInfo abstractions
