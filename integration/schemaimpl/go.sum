@@ -1,0 +1,6 @@
+github.com/hypershadow-io/contract/choice v1.0.0 h1:IWO8j+JiB4MjK0A3kYI27raioGCpzzAQac2UntN6Em4=
+github.com/hypershadow-io/contract/choice v1.0.0/go.mod h1:++x1tYSSErp4johBW+RoR6xWPyepZm95tovs2gDd+wo=
+github.com/hypershadow-io/contract/integration/schema v1.0.0 h1:u8tESg9Vxk6DLBv0ALX2oOOhRCoboeyiXl6jA6Q4QDQ=
+github.com/hypershadow-io/contract/integration/schema v1.0.0/go.mod h1:j0e3WZHhnYnTeFbZ5fgTRpYnSnRoouGRMupTcQOiROU=
+github.com/hypershadow-io/contract/operation/schema v1.0.1 h1:/v5VQVvIEaTOdsxBvxfO8w7ftpVieQ8iTgHDZaE6mbo=
+github.com/hypershadow-io/contract/operation/schema v1.0.1/go.mod h1:jXaIe9lAAOgiz0Nol1MLZ0gkQvpvt511tzSB3kpLVgA=
