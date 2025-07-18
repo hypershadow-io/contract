@@ -109,6 +109,8 @@ The repository consists of multiple independent modules, each contained in its o
     - [operation/model](./operation/model) - defines global Operation model
     - [operation/schema](./operation/schema) - defines Schema interface for Operation structure
     - [operation/schemaimpl](./operation/schemaimpl) - defines base implementation of Operation Schema interface
+    - [operation/schemametainfo](./operation/schemametainfo) - defines metadata fields for describing Operation Schema
+      interface
 - [organization](./organization) - defines base Organization interface
     - [organization/httprouter](./organization/httprouter) - defines internal Organization HTTP router
 - [pager](./pager) - defines Pager abstractions
