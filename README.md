@@ -60,7 +60,7 @@ The repository consists of multiple independent modules, each contained in its o
     - [agenttoken/transport](./agenttoken/transport) - network-safe representation and utilities for AgentToken
       transport
 - [api/httprouter](./api/httprouter) - defines public API HTTP router
-- [apitoken](./apitoken) - defines base API token interface
+- [apitoken](./apitoken) - defines the global entity type identifier for API token
     - [apitoken/find](./apitoken/find) - collection of interfaces for searching API token models
         - [apitoken/find/byid](./apitoken/find/byid) - search for an API token by its ID
     - [apitoken/hook](./apitoken/hook) - API token hook client interface
@@ -68,6 +68,8 @@ The repository consists of multiple independent modules, each contained in its o
     - [apitoken/transport](./apitoken/transport) - network-safe representation and utilities for API token transport
 - [archive](./archive) - defines base archiving interface for entity-based storage
 - [auth](./auth) - token-based authentication and scoped access control
+    - [auth/scope](./auth/scope) - defines access scopes for authorization
+    - [auth/token](./auth/token) - defines the token interfaces
 - [cache](./cache) - defines base cache interface
     - [cache/local](./cache/local) - in-memory cache implementation
 - [choice](./choice) - defines base Choice abstractions
