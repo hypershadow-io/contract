@@ -1,4 +1,4 @@
-package schemaimpl
+package impl
 
 import (
 	"github.com/hypershadow-io/contract/choice"

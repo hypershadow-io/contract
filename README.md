@@ -113,8 +113,8 @@ The repository consists of multiple independent modules, each contained in its o
     - [operation/hook](./operation/hook) - Operation hook client interface
     - [operation/model](./operation/model) - defines global Operation model
     - [operation/schema](./operation/schema) - defines Schema interface for Operation structure
-    - [operation/schemaimpl](./operation/schemaimpl) - defines base implementation of Operation Schema interface
-    - [operation/schemametainfo](./operation/schemametainfo) - defines metadata fields for describing Operation Schema
+    - [operation/schema/impl](./operation/schema/impl) - defines base implementation of Operation Schema interface
+    - [operation/schema/metainfo](./operation/schema/metainfo) - defines metadata fields for describing Operation Schema
       interface
     - [operation/setauth](./operation/setauth) - defines an interface for injecting auth values into Operation
       parameters

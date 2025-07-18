@@ -1,4 +1,4 @@
-module github.com/hypershadow-io/contract/operation/schemametainfo
+module github.com/hypershadow-io/contract/operation/schema/metainfo
 
 go 1.24.0
 

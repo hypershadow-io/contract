@@ -1,4 +1,4 @@
-package schemaimpl
+package impl
 
 // limitNil provides a no-op implementation of the schema.Limit interface.
 // It represents the absence of any limit constraints and always returns zero values.

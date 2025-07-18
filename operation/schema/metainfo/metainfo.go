@@ -1,4 +1,4 @@
-package schemametainfo
+package metainfo
 
 import (
 	"github.com/hypershadow-io/contract/field"
