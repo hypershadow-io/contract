@@ -3,18 +3,18 @@ package httpauth
 import (
 	"context"
 
-	"github.com/hypershadow-io/contract/auth"
+	"github.com/hypershadow-io/contract/auth/scope"
 	"github.com/hypershadow-io/contract/entity"
 	"github.com/hypershadow-io/contract/httpserver"
 )
 
-// ScopeTypeParams returns a auth.ScopeMaker that builds a static entity type
+// ScopeTypeParams returns a scope.Maker that builds a static entity type
 // from path parameters.
 func ScopeTypeParams[In any](
 	serverClient httpserver.Client,
 	entityType entity.Type,
 	getEntityID func(in In) entity.ID,
-) auth.ScopeMaker {
+) scope.Maker {
 	return makeScopeTypeBuilder(
 		serverClient,
 		entityType,
@@ -23,13 +23,13 @@ func ScopeTypeParams[In any](
 	)
 }
 
-// ScopeParams returns a auth.ScopeMaker that dynamically resolves entity type and ID
+// ScopeParams returns a scope.Maker that dynamically resolves entity type and ID
 // from path parameters.
 func ScopeParams[In any](
 	serverClient httpserver.Client,
 	getEntityType func(in In) entity.Type,
 	getEntityID func(in In) entity.ID,
-) auth.ScopeMaker {
+) scope.Maker {
 	return makeScopeBuilder(
 		serverClient,
 		getEntityType,
@@ -38,13 +38,13 @@ func ScopeParams[In any](
 	)
 }
 
-// ScopeTypeQuery returns a auth.ScopeMaker that uses a static entity type
+// ScopeTypeQuery returns a scope.Maker that uses a static entity type
 // and reads the entity ID from query parameters.
 func ScopeTypeQuery[In any](
 	serverClient httpserver.Client,
 	entityType entity.Type,
 	getEntityID func(in In) entity.ID,
-) auth.ScopeMaker {
+) scope.Maker {
 	return makeScopeTypeBuilder(
 		serverClient,
 		entityType,
@@ -53,13 +53,13 @@ func ScopeTypeQuery[In any](
 	)
 }
 
-// ScopeQuery returns a auth.ScopeMaker that dynamically resolves entity type and ID
+// ScopeQuery returns a scope.Maker that dynamically resolves entity type and ID
 // from query parameters.
 func ScopeQuery[In any](
 	serverClient httpserver.Client,
 	getEntityType func(in In) entity.Type,
 	getEntityID func(in In) entity.ID,
-) auth.ScopeMaker {
+) scope.Maker {
 	return makeScopeBuilder(
 		serverClient,
 		getEntityType,
@@ -68,13 +68,13 @@ func ScopeQuery[In any](
 	)
 }
 
-// ScopeTypeBody returns a auth.ScopeMaker that uses a static entity type
+// ScopeTypeBody returns a scope.Maker that uses a static entity type
 // and reads the entity ID from request body.
 func ScopeTypeBody[In any](
 	serverClient httpserver.Client,
 	entityType entity.Type,
 	getEntityID func(in In) entity.ID,
-) auth.ScopeMaker {
+) scope.Maker {
 	return makeScopeTypeBuilder(
 		serverClient,
 		entityType,
@@ -83,13 +83,13 @@ func ScopeTypeBody[In any](
 	)
 }
 
-// ScopeBody returns a auth.ScopeMaker that dynamically resolves entity type and ID
+// ScopeBody returns a scope.Maker that dynamically resolves entity type and ID
 // from request body.
 func ScopeBody[In any](
 	serverClient httpserver.Client,
 	getEntityType func(in In) entity.Type,
 	getEntityID func(in In) entity.ID,
-) auth.ScopeMaker {
+) scope.Maker {
 	return makeScopeBuilder(
 		serverClient,
 		getEntityType,
@@ -98,13 +98,13 @@ func ScopeBody[In any](
 	)
 }
 
-// ScopeTypeAny returns a auth.ScopeMaker that uses a static entity type
+// ScopeTypeAny returns a scope.Maker that uses a static entity type
 // and reads the entity ID from (path -> body -> query) data.
 func ScopeTypeAny[In any](
 	serverClient httpserver.Client,
 	entityType entity.Type,
 	getEntityID func(in In) entity.ID,
-) auth.ScopeMaker {
+) scope.Maker {
 	return makeScopeTypeBuilder(
 		serverClient,
 		entityType,
@@ -113,13 +113,13 @@ func ScopeTypeAny[In any](
 	)
 }
 
-// ScopeAny returns a auth.ScopeMaker that dynamically resolves entity type and ID
+// ScopeAny returns a scope.Maker that dynamically resolves entity type and ID
 // from (path -> body -> query) data.
 func ScopeAny[In any](
 	serverClient httpserver.Client,
 	getEntityType func(in In) entity.Type,
 	getEntityID func(in In) entity.ID,
-) auth.ScopeMaker {
+) scope.Maker {
 	return makeScopeBuilder(
 		serverClient,
 		getEntityType,
@@ -128,19 +128,19 @@ func ScopeAny[In any](
 	)
 }
 
-// ScopeContext returns a auth.ScopeMaker that uses a static entity type
+// ScopeContext returns a scope.Maker that uses a static entity type
 // and receiving the entity ID from callback by context.
 func ScopeContext(
 	entityType entity.Type,
 	getEntityID func(c context.Context) (entity.ID, error),
-) auth.ScopeMaker {
+) scope.Maker {
 	return scopeBuilder{
-		builder: func(c context.Context) (auth.Scope, error) {
+		builder: func(c context.Context) (scope.Scope, error) {
 			entityID, err := getEntityID(c)
 			if err != nil {
 				return nil, err
 			}
-			return scope{
+			return scopeModel{
 				entityType: entityType,
 				entityID:   entityID,
 			}, nil
@@ -154,14 +154,14 @@ func makeScopeTypeBuilder[In any](
 	entityType entity.Type,
 	getEntityID func(in In) entity.ID,
 	parser func(r httpserver.Ctx, in *In) error,
-) auth.ScopeMaker {
+) scope.Maker {
 	return scopeBuilder{
-		builder: func(c context.Context) (auth.Scope, error) {
+		builder: func(c context.Context) (scope.Scope, error) {
 			var in In
 			if err := parser(serverClient.CtxFromContext(c), &in); err != nil {
 				return nil, err
 			}
-			return scope{
+			return scopeModel{
 				entityType: entityType,
 				entityID:   getEntityID(in),
 			}, nil
@@ -175,14 +175,14 @@ func makeScopeBuilder[In any](
 	getEntityType func(in In) entity.Type,
 	getEntityID func(in In) entity.ID,
 	parser func(r httpserver.Ctx, in *In) error,
-) auth.ScopeMaker {
+) scope.Maker {
 	return scopeBuilder{
-		builder: func(c context.Context) (auth.Scope, error) {
+		builder: func(c context.Context) (scope.Scope, error) {
 			var in In
 			if err := parser(serverClient.CtxFromContext(c), &in); err != nil {
 				return nil, err
 			}
-			return scope{
+			return scopeModel{
 				entityType: getEntityType(in),
 				entityID:   getEntityID(in),
 			}, nil
@@ -191,19 +191,19 @@ func makeScopeBuilder[In any](
 }
 
 type (
-	// scopeBuilder is an implementation of auth.ScopeMaker using a context-based builder function.
+	// scopeBuilder is an implementation of scope.Maker using a context-based builder function.
 	scopeBuilder struct {
-		builder func(c context.Context) (auth.Scope, error)
+		builder func(c context.Context) (scope.Scope, error)
 	}
 
-	// scope is a simple implementation of auth.Scope.
-	scope struct {
+	// scope is a simple implementation of scope.Scope.
+	scopeModel struct {
 		entityType entity.Type
 		entityID   entity.ID
 	}
 )
 
-func (a scopeBuilder) Scope(c context.Context) (auth.Scope, error) { return a.builder(c) }
+func (a scopeBuilder) Scope(c context.Context) (scope.Scope, error) { return a.builder(c) }
 
-func (a scope) EntityType() entity.Type { return a.entityType }
-func (a scope) GetEntityID() entity.ID  { return a.entityID }
+func (a scopeModel) EntityType() entity.Type { return a.entityType }
+func (a scopeModel) GetEntityID() entity.ID  { return a.entityID }

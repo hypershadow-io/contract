@@ -95,7 +95,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [httpserverws](./httpserverws) - WebSocket connection interfaces
 - [id](./id) - unique identifier generation and conversion utilities
 - [identity](./identity) - defines identity abstractions
-- [integration](./integration) - defines base Integration interface
+- [integration](./integration) - defines the global entity type identifier for Agent
     - [integration/find](./integration/find) - collection of interfaces for searching Integration models
         - [integration/find/byid](./integration/find/byid) - search for an Integration by its ID
     - [integration/hook](./integration/hook) - Integration hook client interface
@@ -106,7 +106,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [meta](./meta) - key-value metadata container
 - [metainfo](./metainfo) - defines base MetaInfo abstractions
 - [metajson](./metajson) - network-safe wrapper for meta.Meta, used for JSON transport and decoding
-- [operation](./operation) - defines base Operation interface
+- [operation](./operation) - defines the global entity type identifier for Operation
     - [operation/find](./operation/find) - collection of interfaces for searching Operation models
         - [operation/find/byid](./operation/find/byid) - search for an Operation by its ID
         - [operation/find/byids](./operation/find/byids) - search for an Operations by its IDs
@@ -120,7 +120,9 @@ The repository consists of multiple independent modules, each contained in its o
       parameters
     - [operation/validate](./operation/validate) - defines an interface for validating parameters against Operation
       Schemas
-- [organization](./organization) - defines base Organization interface
+- [organization](./organization) - defines the global entity type identifier for Organization
+    - [organization/ctx](./organization/ctx) - defines interface for storing/retrieving Organization ID in context
+    - [organization/db](./organization/db) - defines interface for working with Organization DB
     - [organization/httprouter](./organization/httprouter) - defines internal Organization HTTP router
 - [pager](./pager) - defines Pager abstractions
 - [plugin](./plugin) - core Plugin interfaces
