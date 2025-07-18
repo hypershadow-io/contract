@@ -42,7 +42,8 @@ The repository consists of multiple independent modules, each contained in its o
 
 ## ✅ List of Available Packages
 
-- [agent](./agent) - defines base Agent interface
+- [agent](./agent) - defines the global entity type identifier for Agent
+    - [agent/ctx](./agent/ctx) - defines an interface for storing/retrieving Agent ID from context
     - [agent/find](./agent/find) - collection of interfaces for searching Agent models
         - [agent/find/byid](./agent/find/byid) - search for an Agent by its ID
     - [agent/hook](./agent/hook) - Agent hook client interface
