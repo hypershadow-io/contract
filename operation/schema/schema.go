@@ -141,8 +141,8 @@ const (
 	AuthTypeApiKey AuthType = "apiKey"
 )
 
-// FindByExternalId searches the schema list for a schema with the specified external ID.
-func (a List) FindByExternalId(externalID string) (res_ Schema, found_ bool) {
+// FindByExternalID searches the schema list for a schema with the specified external ID.
+func (a List) FindByExternalID(externalID string) (res_ Schema, found_ bool) {
 	for _, item := range a {
 		if item.GetExternalID() == externalID {
 			return item, true
