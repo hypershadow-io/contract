@@ -1,4 +1,4 @@
-package hookimpl
+package impl
 
 import (
 	"context"

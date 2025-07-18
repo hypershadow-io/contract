@@ -1,4 +1,4 @@
-module github.com/hypershadow-io/contract/hookimpl
+module github.com/hypershadow-io/contract/hook/impl
 
 go 1.24.0
 

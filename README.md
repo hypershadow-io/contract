@@ -87,7 +87,7 @@ The repository consists of multiple independent modules, each contained in its o
   [fielderror](./fielderror) - defines a field-level error interface and model
 - [fmt](./fmt) - defines customizable fmt interface
 - [hook](./hook) - event hook system for subscribing to and modifying operations in other plugins
-- [hookimpl](./hookimpl) - default implementation of hook registry and provider
+    - [hook/impl](./hook/impl) - default implementation of hook registry and provider
 - [httpauth](./httpauth) - dynamic scope builders for HTTP-based entity access control
 - [httpserver](./httpserver) - HTTP server contracts, handlers, routing, middleware
 - [httpservercors](./httpservercors) - CORS handler builder for HTTP server
