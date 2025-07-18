@@ -67,7 +67,7 @@ type (
 		IsRequired() bool
 
 		// GetLimit returns validation constraints on the property's value.
-		GetLimit() PropertyLimit
+		GetLimit() Limit
 	}
 
 	// Auth defines the authorization method required for the associated schema or property.
@@ -82,8 +82,8 @@ type (
 		GetType() AuthType
 	}
 
-	// PropertyLimit defines the constraints applicable to a schema property.
-	PropertyLimit interface {
+	// Limit defines the constraints applicable to a schema property.
+	Limit interface {
 		// IsValid returns true if constraints are defined correctly.
 		IsValid() bool
 
