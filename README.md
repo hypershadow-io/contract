@@ -111,6 +111,8 @@ The repository consists of multiple independent modules, each contained in its o
     - [operation/schemaimpl](./operation/schemaimpl) - defines base implementation of Operation Schema interface
     - [operation/schemametainfo](./operation/schemametainfo) - defines metadata fields for describing Operation Schema
       interface
+    - [operation/validate](./operation/validate) - defines an interface for validating parameters against Operation
+      Schemas
 - [organization](./organization) - defines base Organization interface
     - [organization/httprouter](./organization/httprouter) - defines internal Organization HTTP router
 - [pager](./pager) - defines Pager abstractions
