@@ -1,4 +1,4 @@
-package httpservercors
+package cors
 
 import (
 	"github.com/hypershadow-io/contract/httpserver"

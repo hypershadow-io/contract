@@ -1,4 +1,4 @@
-package httpserverws
+package ws
 
 import (
 	"context"

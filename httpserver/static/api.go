@@ -1,4 +1,4 @@
-package httpserverstatic
+package static
 
 import (
 	"io/fs"

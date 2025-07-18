@@ -1,4 +1,4 @@
-module github.com/hypershadow-io/contract/httpservercors
+module github.com/hypershadow-io/contract/httpserver/cors
 
 go 1.24.0
 

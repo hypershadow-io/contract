@@ -1,4 +1,4 @@
-module github.com/hypershadow-io/contract/httpserverws
+module github.com/hypershadow-io/contract/httpserver/static
 
 go 1.24.0
 
