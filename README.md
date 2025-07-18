@@ -49,7 +49,7 @@ The repository consists of multiple independent modules, each contained in its o
     - [agent/hook](./agent/hook) - Agent hook client interface
     - [agent/httprouter](./agent/httprouter) - defines internal Agent HTTP router
     - [agent/model](./agent/model) - defines global Agent model
-- [agenttoken](./agenttoken) - defines base AgentToken interface
+- [agenttoken](./agenttoken) - defines the global entity type identifier for AgentToken
     - [agenttoken/create](./agenttoken/create) - collection of interfaces for creates AgentToken models
         - [agenttoken/create/fromparams](./agenttoken/create/fromparams) - creates AgentToken from raw input parameters
     - [agenttoken/find](./agenttoken/find) - collection of interfaces for searching AgentToken models
@@ -59,7 +59,7 @@ The repository consists of multiple independent modules, each contained in its o
     - [agenttoken/model](./agenttoken/model) - defines global AgentToken model
     - [agenttoken/transport](./agenttoken/transport) - network-safe representation and utilities for AgentToken
       transport
-- [api](./api) - common public API interface
+- [api/httprouter](./api/httprouter) - defines public API HTTP router
 - [apitoken](./apitoken) - defines base API token interface
     - [apitoken/find](./apitoken/find) - collection of interfaces for searching API token models
         - [apitoken/find/byid](./apitoken/find/byid) - search for an API token by its ID

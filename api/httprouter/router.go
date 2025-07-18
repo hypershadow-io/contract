@@ -1,7 +1,7 @@
-package api
+package httprouter
 
 import "github.com/hypershadow-io/contract/httpserver"
 
-// RouterBuilder defines the public API router builder interface,
+// Builder defines the public API router builder interface,
 // used for constructing and organizing HTTP routes within the plugin system.
-type RouterBuilder httpserver.RouterBuilder
+type Builder httpserver.RouterBuilder
