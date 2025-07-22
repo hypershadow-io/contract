@@ -13,13 +13,8 @@ type (
 		// Error returns the final error message as a string (implements error).
 		Error() string
 
-		// GetBase returns the underlying base error (if any).
-		GetBase() error
-
-		// SetBase sets the base error.
-		SetBase(err error) Builder
-
 		// GetMessage returns the error message.
+		// If not explicitly set on the builder, attempts to retrieve it from wrapped errors.
 		GetMessage() string
 
 		// SetMessagef sets a formatted error message.
@@ -28,6 +23,7 @@ type (
 		// GetKey returns the machine-readable error key.
 		// This key is included in the client response and can be used to correlate the error
 		// with extended logs or internal diagnostics.
+		// If not explicitly set on the builder, attempts to retrieve it from wrapped errors.
 		GetKey() string
 
 		// SetKey sets the error key that will be returned to the client.
@@ -35,12 +31,14 @@ type (
 		SetKey(key string) Builder
 
 		// GetValidation returns field-level validation errors.
+		// If not explicitly set on the builder, attempts to retrieve it from wrapped errors.
 		GetValidation() map[string]string
 
 		// SetValidation sets field-level validation errors.
 		SetValidation(err map[string]string) Builder
 
 		// GetCode returns the optional numeric code (e.g., HTTP status).
+		// If not explicitly set on the builder, attempts to retrieve it from wrapped errors.
 		GetCode() int
 
 		// SetCode sets the numeric code.
@@ -50,12 +48,14 @@ type (
 		AddWrap(err error) Builder
 
 		// GetLogMessage returns the log-specific message.
+		// If not explicitly set on the builder, attempts to retrieve it from wrapped errors.
 		GetLogMessage() string
 
 		// SetLogMessagef sets a formatted log message for internal logging purposes.
 		SetLogMessagef(format string, args ...any) Builder
 
 		// GetMeta returns associated metadata.
+		// If not explicitly set on the builder, attempts to retrieve it from wrapped errors.
 		GetMeta() meta.Meta
 
 		// SetMeta replaces the metadata.
@@ -65,6 +65,7 @@ type (
 		MergeMeta(m meta.Meta) Builder
 
 		// GetLogger returns the associated logging function (if any).
+		// If not explicitly set on the builder, attempts to retrieve it from wrapped errors.
 		GetLogger() LogFunc
 
 		// SetLogger sets a logging function.
