@@ -106,8 +106,9 @@ The repository consists of multiple independent modules, each contained in its o
           interface
 - [json](./json) - JSON codec wrapper for serialization and streaming
 - [meta](./meta) - key-value metadata container
+    - [meta/json](./meta/json) - network-safe wrapper for meta.Meta, used for JSON transport and decoding
+    - [meta/slog](./meta/slog) - converts meta.Meta into structured slog attributes for logging
 - [metainfo](./metainfo) - defines base MetaInfo abstractions
-- [metajson](./metajson) - network-safe wrapper for meta.Meta, used for JSON transport and decoding
 - [operation](./operation) - defines the global entity type identifier for Operation
     - [operation/find](./operation/find) - collection of interfaces for searching Operation models
         - [operation/find/byid](./operation/find/byid) - search for an Operation by its ID

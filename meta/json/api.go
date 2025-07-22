@@ -1,4 +1,4 @@
-package metajson
+package json
 
 import (
 	"github.com/hypershadow-io/contract/json"

@@ -1,4 +1,4 @@
-module github.com/hypershadow-io/contract/metajson
+module github.com/hypershadow-io/contract/meta/json
 
 go 1.24.0
 
