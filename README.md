@@ -82,7 +82,7 @@ The repository consists of multiple independent modules, each contained in its o
 - [di](./di) - dependency injection contracts
 - [dispatcher/rest/schema](./dispatcher/rest/schema) - defines extended schema interface for REST dispatching
 - [eb](./eb) - centralized error builder
-- [ebimpl](./ebimpl) - default implementation of the error builder interface
+    - [eb/impl](./eb/impl) - default implementation of the error builder interface
 - [entity](./entity) - base entity types and identifiers
 - [field](./field) - defines field abstractions
   [fielderror](./fielderror) - defines a field-level error interface and model

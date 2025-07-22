@@ -1,8 +1,9 @@
-package ebimpl
+package impl
 
 import (
 	"context"
 	"errors"
+	"iter"
 	"strings"
 
 	"github.com/hypershadow-io/contract/eb"
@@ -28,10 +29,9 @@ func Wrap(base error, err eb.Builder) eb.Builder {
 // Builder is a generic error builder used to construct structured errors of type E.
 // Typically used via the [eb.Builder] interface.
 type Builder[E error] struct {
-	base       error             // base (original) error
-	Message    string            `json:"message,omitempty"`    // human-readable error message
-	Key        string            `json:"key,omitempty"`        // machine-readable error key for client/log correlation
-	Validation map[string]string `json:"validation,omitempty"` // field-level validation errors
+	message    string            // human-readable error message
+	key        string            // machine-readable error key for client/log correlation
+	validation map[string]string // field-level validation errors
 	code       int               // numeric error code (e.g. HTTP status)
 	wrapped    []error           // additional errors to wrap
 	logMessage string            // optional log message (internal use)
@@ -41,49 +41,69 @@ type Builder[E error] struct {
 
 var noLogger = func(context.Context, string, ...any) {}
 
-func (a Builder[E]) GetBase() error { return a.base }
-func (a Builder[E]) SetBase(v error) eb.Builder {
-	a.base = v
-	return a
-}
-
 func (a Builder[E]) GetMessage() string {
-	if a.Message != "" {
-		return a.Message
+	if a.message != "" {
+		return a.message
 	}
-	for _, err := range a.wrapped {
-		if e, ok := err.(eb.Builder); ok {
-			msg := e.GetMessage()
-			if msg != "" {
-				return msg
-			}
+	for e := range a.unwrap() {
+		if result := e.GetMessage(); result != "" {
+			return result
 		}
 	}
 	return ""
 }
-
 func (a Builder[E]) SetMessagef(format string, args ...any) eb.Builder {
 	if len(args) == 0 {
-		a.Message = format
+		a.message = format
 	} else {
-		a.Message = fmt.Sprintf(format, args...)
+		a.message = fmt.Sprintf(format, args...)
 	}
 	return a
 }
 
-func (a Builder[E]) GetKey() string { return a.Key }
+func (a Builder[E]) GetKey() string {
+	if a.key != "" {
+		return a.key
+	}
+	for e := range a.unwrap() {
+		if result := e.GetKey(); result != "" {
+			return result
+		}
+	}
+	return ""
+}
 func (a Builder[E]) SetKey(v string) eb.Builder {
-	a.Key = v
+	a.key = v
 	return a
 }
 
-func (a Builder[E]) GetValidation() map[string]string { return a.Validation }
+func (a Builder[E]) GetValidation() map[string]string {
+	if a.validation != nil {
+		return a.validation
+	}
+	for e := range a.unwrap() {
+		if result := e.GetValidation(); result != nil {
+			return result
+		}
+	}
+	return nil
+}
 func (a Builder[E]) SetValidation(v map[string]string) eb.Builder {
-	a.Validation = v
+	a.validation = v
 	return a
 }
 
-func (a Builder[E]) GetCode() int { return a.code }
+func (a Builder[E]) GetCode() int {
+	if a.code != 0 {
+		return a.code
+	}
+	for e := range a.unwrap() {
+		if result := e.GetCode(); result != 0 {
+			return result
+		}
+	}
+	return 0
+}
 func (a Builder[E]) SetCode(v int) eb.Builder {
 	a.code = v
 	return a
@@ -96,7 +116,17 @@ func (a Builder[E]) AddWrap(v error) eb.Builder {
 	return a
 }
 
-func (a Builder[E]) GetLogMessage() string { return a.logMessage }
+func (a Builder[E]) GetLogMessage() string {
+	if a.logMessage != "" {
+		return a.logMessage
+	}
+	for e := range a.unwrap() {
+		if result := e.GetLogMessage(); result != "" {
+			return result
+		}
+	}
+	return ""
+}
 func (a Builder[E]) SetLogMessagef(format string, args ...any) eb.Builder {
 	if len(args) == 0 {
 		a.logMessage = format
@@ -106,7 +136,17 @@ func (a Builder[E]) SetLogMessagef(format string, args ...any) eb.Builder {
 	return a
 }
 
-func (a Builder[E]) GetMeta() meta.Meta { return a.meta }
+func (a Builder[E]) GetMeta() meta.Meta {
+	if a.meta != nil {
+		return a.meta
+	}
+	for e := range a.unwrap() {
+		if result := e.GetMeta(); result != nil {
+			return result
+		}
+	}
+	return nil
+}
 func (a Builder[E]) SetMeta(m meta.Meta) eb.Builder {
 	a.meta = m
 	return a
@@ -116,7 +156,17 @@ func (a Builder[E]) MergeMeta(m meta.Meta) eb.Builder {
 	return a
 }
 
-func (a Builder[E]) GetLogger() eb.LogFunc { return a.logger }
+func (a Builder[E]) GetLogger() eb.LogFunc {
+	if a.logger != nil {
+		return a.logger
+	}
+	for e := range a.unwrap() {
+		if result := e.GetLogger(); result != nil {
+			return result
+		}
+	}
+	return nil
+}
 func (a Builder[E]) SetLogger(v eb.LogFunc) eb.Builder {
 	a.logger = v
 	return a
@@ -125,30 +175,34 @@ func (a Builder[E]) SetNoLogger() eb.Builder {
 	return a.SetLogger(noLogger)
 }
 
-func (a Builder[E]) Unwrap() []error {
-	if any(a.base) == nil {
-		return a.wrapped
+func (a Builder[E]) Unwrap() []error { return a.wrapped }
+
+func (a Builder[E]) unwrap() iter.Seq[eb.Builder] {
+	return func(yield func(eb.Builder) bool) {
+		for i := range a.wrapped {
+			var e eb.Builder
+			if errors.As(a.wrapped[i], &e) {
+				if !yield(e) {
+					return
+				}
+			}
+		}
 	}
-	return append(
-		append(make([]error, 0, 1+len(a.wrapped)), a.base),
-		a.wrapped...,
-	)
 }
 
 func (a Builder[E]) Error() string {
 	var builder strings.Builder
 	var base E
-	errors.As(a.base, &base)
 	if any(base) != nil {
 		builder.WriteRune('<')
 		builder.WriteString(base.Error())
 		builder.WriteRune('>')
 	}
-	if a.Message != "" {
+	if a.message != "" {
 		if builder.Len() > 0 {
 			builder.WriteRune(' ')
 		}
-		builder.WriteString(a.Message)
+		builder.WriteString(a.message)
 	}
 	if a.logMessage != "" {
 		if builder.Len() > 0 {
