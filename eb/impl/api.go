@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"iter"
+	"maps"
 	"strings"
 
 	"github.com/hypershadow-io/contract/eb"
@@ -155,6 +156,15 @@ func (a Builder[E]) MergeMeta(m meta.Meta) eb.Builder {
 	a.meta = a.meta.Merge(m)
 	return a
 }
+func (a Builder[E]) DrainMeta() meta.Meta {
+	result := meta.Make(len(a.meta))
+	for e := range a.unwrap() {
+		maps.Copy(result, e.DrainMeta())
+	}
+	maps.Copy(result, a.meta)
+	clear(a.meta)
+	return result
+}
 
 func (a Builder[E]) GetLogger() eb.LogFunc {
 	if a.logger != nil {
@@ -216,7 +226,9 @@ func (a Builder[E]) Error() string {
 			builder.WriteRune(' ')
 		}
 		builder.WriteString("meta: ")
-		_ = json.NewEncoder(&builder).Encode(a.meta)
+		if data, _ := json.Marshal(a.meta); len(data) > 0 {
+			builder.Write(data)
+		}
 	}
 	for _, err := range a.wrapped {
 		if builder.Len() > 0 {
