@@ -64,6 +64,10 @@ type (
 		// MergeMeta merges additional metadata into the existing set.
 		MergeMeta(m meta.Meta) Builder
 
+		// DrainMeta collects all metadata from the builder and any wrapped errors.
+		// It removes the metadata from each source as it is collected, ensuring no duplication.
+		DrainMeta() meta.Meta
+
 		// GetLogger returns the associated logging function (if any).
 		// If not explicitly set on the builder, attempts to retrieve it from wrapped errors.
 		GetLogger() LogFunc
