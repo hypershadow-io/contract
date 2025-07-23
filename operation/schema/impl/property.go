@@ -43,7 +43,7 @@ type Property struct {
 	Ref         string                 `json:"ref,omitempty"`
 	Auth        Auth                   `json:"auth,omitzero"`
 	Name        string                 `json:"name,omitempty"`
-	Description choice.Model[string]   `json:"description,omitempty"`
+	Description choice.Model[string]   `json:"description,omitzero"`
 	Section     schema.PropertySection `json:"section,omitempty"`
 	Type        []schema.PropertyType  `json:"type,omitempty"`
 	AllOf       []Property             `json:"allOf,omitempty"`

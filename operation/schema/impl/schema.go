@@ -22,10 +22,10 @@ func MakeSchemaFrom(in schema.Schema) Schema {
 
 // Schema is a base implementation of the schema.Schema interface.
 type Schema struct {
-	Description choice.Model[string] `json:"description,omitempty"`
+	Description choice.Model[string] `json:"description,omitzero"`
 	Action      string               `json:"action,omitempty"`
 	ExternalID  string               `json:"externalId,omitempty"`
-	Attributes  Property             `json:"attributes,omitempty"`
+	Attributes  Property             `json:"attributes,omitzero"`
 	Components  map[string]Property  `json:"components,omitempty"`
 	// TODO rathil add tags!!!
 	// TODO rathil add response!!!
