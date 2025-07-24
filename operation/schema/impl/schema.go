@@ -30,7 +30,7 @@ type Schema struct {
 	Attributes  Property             `json:"attributes,omitzero"`
 	Components  map[string]Property  `json:"components,omitempty"`
 	Tags        []string             `json:"tags,omitempty"`
-	Response    Property             `json:"response,omitempty"`
+	Response    Property             `json:"response,omitzero"`
 }
 
 func (a Schema) GetAction() string                       { return a.Action }
