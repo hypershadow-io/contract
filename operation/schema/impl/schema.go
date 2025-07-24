@@ -17,6 +17,8 @@ func MakeSchemaFrom(in schema.Schema) Schema {
 		ExternalID:  in.GetExternalID(),
 		Attributes:  MakePropertyFrom(in.GetAttributes()),
 		Components:  MakeComponentFrom(in.GetComponents()),
+		// Tags:        in.GetTags(),
+		// Response:       MakePropertyFrom( in.GetResponse()),
 	}
 }
 
@@ -27,8 +29,8 @@ type Schema struct {
 	ExternalID  string               `json:"externalId,omitempty"`
 	Attributes  Property             `json:"attributes,omitzero"`
 	Components  map[string]Property  `json:"components,omitempty"`
-	// TODO rathil add tags!!!
-	// TODO rathil add response!!!
+	Tags        []string             `json:"tags,omitempty"`
+	Response    Property             `json:"response,omitempty"`
 }
 
 func (a Schema) GetAction() string                       { return a.Action }
@@ -48,6 +50,9 @@ func (a Schema) GetComponents() map[string]schema.Property {
 	}
 	return result
 }
+
+func (a Schema) GetTags() []string            { return a.Tags }
+func (a Schema) GetResponse() schema.Property { return a.Response }
 
 func (a Schema) Resolve(ref string) schema.Property {
 	if ref == "" {

@@ -24,6 +24,12 @@ type (
 		// GetComponents returns named reusable properties used in the schema.
 		GetComponents() map[string]Property
 
+		// GetTags returns a list of tags associated with the schema.
+		GetTags() []string
+
+		// GetResponse returns the property definition of the response.
+		GetResponse() Property
+
 		// Resolve returns a property by its reference key from components.
 		Resolve(ref string) Property
 	}
