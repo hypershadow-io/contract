@@ -17,8 +17,8 @@ func MakeSchemaFrom(in schema.Schema) Schema {
 		ExternalID:  in.GetExternalID(),
 		Attributes:  MakePropertyFrom(in.GetAttributes()),
 		Components:  MakeComponentFrom(in.GetComponents()),
-		// Tags:        in.GetTags(),
-		// Response:       MakePropertyFrom( in.GetResponse()),
+		Tags:        in.GetTags(),
+		Response:    MakePropertyFrom(in.GetResponse()),
 	}
 }
 

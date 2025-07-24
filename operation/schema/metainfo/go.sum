@@ -4,5 +4,5 @@ github.com/hypershadow-io/contract/field v1.1.0 h1:Eg+ABdq7K6xkAEbAQF4Go3pQ/xdIy
 github.com/hypershadow-io/contract/field v1.1.0/go.mod h1:TthXKGsvh725FQK315vepDc62JhRkt7SFTWnVfby02o=
 github.com/hypershadow-io/contract/identity v1.1.0 h1:X3ww04voFxn6Den47k2zQ93LD4xpxBCnDsbaNHNg/kM=
 github.com/hypershadow-io/contract/identity v1.1.0/go.mod h1:KM6GIMWQDCeE0i9pqXVXpl1oTn5HJT85o2qPQAqGuug=
-github.com/hypershadow-io/contract/operation/schema v1.0.2 h1:ki0GlKmUwy23vLOhrcO75sUD7pB9fL2D/Ch3wg4WCgU=
-github.com/hypershadow-io/contract/operation/schema v1.0.2/go.mod h1:jXaIe9lAAOgiz0Nol1MLZ0gkQvpvt511tzSB3kpLVgA=
+github.com/hypershadow-io/contract/operation/schema v1.0.3 h1:rz75IL7GJPukwZQ2ZrUg6uyz0cVQ98eQTP++e0/NiQA=
+github.com/hypershadow-io/contract/operation/schema v1.0.3/go.mod h1:jXaIe9lAAOgiz0Nol1MLZ0gkQvpvt511tzSB3kpLVgA=
