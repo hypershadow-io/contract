@@ -105,6 +105,7 @@ The repository consists of multiple independent modules, each contained in its o
         - [integration/schema/impl](./integration/schema/impl) - defines base implementation of Integration Schema
           interface
 - [json](./json) - JSON codec wrapper for serialization and streaming
+    - [jsonint](./json/int) – defines int64 wrapper for marshaling/unmarshaling as JSON string.
 - [meta](./meta) - key-value metadata container
     - [meta/json](./meta/json) - network-safe wrapper for meta.Meta, used for JSON transport and decoding
     - [meta/slog](./meta/slog) - converts meta.Meta into structured slog attributes for logging
