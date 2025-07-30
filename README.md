@@ -106,7 +106,7 @@ The repository consists of multiple independent modules, each contained in its o
           interface
 - [json](./json) - JSON codec wrapper for serialization and streaming
     - [json/jsonint](./json/jsonint) – defines int64 wrapper for marshaling/unmarshaling as JSON string.
-    - [json/jsonraw](./json/jsonraw) – defines raw message equivalent of json.RawMessage.
+    - [json/raw](./json/raw) – defines raw message equivalent of json.RawMessage.
 - [meta](./meta) - key-value metadata container
     - [meta/json](./meta/json) - network-safe wrapper for meta.Meta, used for JSON transport and decoding
     - [meta/slog](./meta/slog) - converts meta.Meta into structured slog attributes for logging

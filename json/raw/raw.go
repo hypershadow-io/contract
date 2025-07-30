@@ -1,4 +1,4 @@
-package jsonraw
+package raw
 
 import "errors"
 
