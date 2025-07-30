@@ -4,7 +4,7 @@ github.com/hypershadow-io/contract/eb v1.1.1 h1:8teAMZmMjsoqc8kPzop2oGvyknOP9jED
 github.com/hypershadow-io/contract/eb v1.1.1/go.mod h1:GTpPB8VqUO7DxB1JdJGQnxli+kTo0ZGsAIdyEG9r3Sc=
 github.com/hypershadow-io/contract/fmt v1.0.0 h1:iXfGkHOVgY/N71Sti+DycHfvF+ryQ0G+7QkkykHog1A=
 github.com/hypershadow-io/contract/fmt v1.0.0/go.mod h1:CpljHdPhNuqv7qZreIajJbbIb67S9Da/rDjMvrdLKS0=
-github.com/hypershadow-io/contract/json v1.0.0 h1:oAmrDHhwb/1UgVL4gJzT2wkmNjSaYqTRRM88uISNBE0=
-github.com/hypershadow-io/contract/json v1.0.0/go.mod h1:jike2/Mw6JFf/QHLaq8H7RRPZw6Eu1nulLb4kqlSU+4=
+github.com/hypershadow-io/contract/json v1.1.0 h1:MRUV8DJISx3VrEyBWb0uuAAVEyqHD2fIdMQDrkkA8Io=
+github.com/hypershadow-io/contract/json v1.1.0/go.mod h1:jike2/Mw6JFf/QHLaq8H7RRPZw6Eu1nulLb4kqlSU+4=
 github.com/hypershadow-io/contract/meta v1.0.0 h1:rR1LR9o8qVY237NqKoVBCToKEf2d8D8V9iQqCKOTWjY=
 github.com/hypershadow-io/contract/meta v1.0.0/go.mod h1:6/TTIgfnUs4/D+3q4gZOwpglr1GVQ6jYeZTlvkywTPk=
