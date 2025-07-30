@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/hypershadow-io/contract/jsonint"
+	"github.com/hypershadow-io/contract/json/jsonint"
 )
 
 func TestInt64_MarshalJSON(t *testing.T) {
