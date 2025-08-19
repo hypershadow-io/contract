@@ -62,35 +62,35 @@ func (a Property) GetAuth() schema.Auth {
 	if a.Auth.IsValid() {
 		return a.Auth
 	}
-	return a.schema.Resolve(a.Ref).GetAuth()
+	return a.resolve().GetAuth()
 }
 
 func (a Property) GetName() string {
 	if a.Name != "" {
 		return a.Name
 	}
-	return a.schema.Resolve(a.Ref).GetName()
+	return a.resolve().GetName()
 }
 
 func (a Property) GetDescription() choice.Selector[string] {
 	if len(a.Description.Options) > 0 {
 		return a.Description
 	}
-	return a.schema.Resolve(a.Ref).GetDescription()
+	return a.resolve().GetDescription()
 }
 
 func (a Property) GetSection() schema.PropertySection {
 	if a.Section != "" {
 		return a.Section
 	}
-	return a.schema.Resolve(a.Ref).GetSection()
+	return a.resolve().GetSection()
 }
 
 func (a Property) GetType() []schema.PropertyType {
 	if len(a.Type) > 0 {
 		return a.Type
 	}
-	return a.schema.Resolve(a.Ref).GetType()
+	return a.resolve().GetType()
 }
 
 func (a Property) GetAllOf() []schema.Property {
@@ -100,7 +100,7 @@ func (a Property) GetAllOf() []schema.Property {
 			return item
 		})
 	}
-	return a.schema.Resolve(a.Ref).GetAllOf()
+	return a.resolve().GetAllOf()
 }
 
 func (a Property) GetOneOf() []schema.Property {
@@ -110,7 +110,7 @@ func (a Property) GetOneOf() []schema.Property {
 			return item
 		})
 	}
-	return a.schema.Resolve(a.Ref).GetOneOf()
+	return a.resolve().GetOneOf()
 }
 
 func (a Property) GetAnyOf() []schema.Property {
@@ -120,7 +120,7 @@ func (a Property) GetAnyOf() []schema.Property {
 			return item
 		})
 	}
-	return a.schema.Resolve(a.Ref).GetAnyOf()
+	return a.resolve().GetAnyOf()
 }
 
 func (a Property) GetProperties() []schema.Property {
@@ -130,21 +130,21 @@ func (a Property) GetProperties() []schema.Property {
 			return item
 		})
 	}
-	return a.schema.Resolve(a.Ref).GetProperties()
+	return a.resolve().GetProperties()
 }
 
 func (a Property) IsRequired() bool {
 	if a.Required {
 		return true
 	}
-	return a.schema.Resolve(a.Ref).IsRequired()
+	return a.resolve().IsRequired()
 }
 
 func (a Property) GetLimit() schema.Limit {
 	if a.Limit != nil {
 		return a.Limit
 	}
-	return a.schema.Resolve(a.Ref).GetLimit()
+	return a.resolve().GetLimit()
 }
 
 // EnsureLimit ensures that the Limit field is initialized.
@@ -155,4 +155,11 @@ func (a *Property) EnsureLimit() *Limit {
 		a.Limit = &Limit{}
 	}
 	return a.Limit
+}
+
+func (a Property) resolve() schema.Property {
+	if a.schema == nil {
+		return propertyNil{}
+	}
+	return a.schema.Resolve(a.Ref)
 }
