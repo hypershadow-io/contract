@@ -1,8 +1,8 @@
 package metainfo
 
 import (
-	"github.com/hypershadow-io/contract/field"
 	"github.com/hypershadow-io/contract/identity"
+	"github.com/hypershadow-io/contract/metainfo/field"
 )
 
 type (
