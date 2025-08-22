@@ -34,8 +34,14 @@ type (
 		// Add registers a migration source (filesystem) for the given plugin.
 		Add(pluginID string, fs FS)
 
+		// AddGetter registers a getter migration source (filesystem) for the given plugin.
+		AddGetter(
+			pluginID string,
+			getter func(c context.Context) FS,
+		)
+
 		// GetSystemOnly returns migrations registered by system-level plugins only.
-		GetSystemOnly() []FS
+		GetSystemOnly(c context.Context) []FS
 
 		// Get returns all registered migrations from all plugins, including tenant-specific ones.
 		Get(c context.Context) []FS
