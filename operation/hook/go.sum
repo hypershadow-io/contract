@@ -1,12 +1,12 @@
-github.com/hypershadow-io/contract/db v1.1.0 h1:BXkE8/OhwuUWQJ59rveYiLL8v/hzCXyhFvHBRbknqoc=
-github.com/hypershadow-io/contract/db v1.1.0/go.mod h1:O/0PWYhCghDvJLOQSRyeFELq7IU9a3B/B0dLTPfQ6Aw=
+github.com/hypershadow-io/contract/db v1.2.0 h1:RAAinyX7bM1JdaGqBxcOyZisY+q3+bFjeIrJark2KdM=
+github.com/hypershadow-io/contract/db v1.2.0/go.mod h1:O/0PWYhCghDvJLOQSRyeFELq7IU9a3B/B0dLTPfQ6Aw=
 github.com/hypershadow-io/contract/hook v1.0.0 h1:MCtElj7xJxupYhILddPOFRewZHVC9KWz+uKj8hG5jjs=
 github.com/hypershadow-io/contract/hook v1.0.0/go.mod h1:2rCKsqteS6PXMVTEDTLd2rL0uXFC71Z6YLyAmwZ4vlk=
 github.com/hypershadow-io/contract/meta v1.0.0 h1:rR1LR9o8qVY237NqKoVBCToKEf2d8D8V9iQqCKOTWjY=
 github.com/hypershadow-io/contract/meta v1.0.0/go.mod h1:6/TTIgfnUs4/D+3q4gZOwpglr1GVQ6jYeZTlvkywTPk=
 github.com/hypershadow-io/contract/operation/model v1.0.0 h1:N3RXCyW9WmlR/OtDomoN+xoFT6jVu5YVFqSq/mC0OOU=
 github.com/hypershadow-io/contract/operation/model v1.0.0/go.mod h1:M8YMa+i/ko778lF68HExNkfX1UYOsMbk47fzL+yICAI=
-github.com/hypershadow-io/contract/qb v1.1.0 h1:RzmkQH/MbfRnAKag5diWbMYE3pat3duxXwyWuq1SCeA=
-github.com/hypershadow-io/contract/qb v1.1.0/go.mod h1:rwaPfzqKpfBg6il+jAFPDFe2/5gwUW7fl0tbL7pqHas=
+github.com/hypershadow-io/contract/qb v1.2.0 h1:v6gxo6COeHoxrVmBLOBThHN2gWZvKq+DkyLzxVG46Fo=
+github.com/hypershadow-io/contract/qb v1.2.0/go.mod h1:ZfSzxhVBN8T+GB0bkLojjRINH0NW9biJ7ubhXDE9Dvc=
 github.com/hypershadow-io/contract/utiliter v1.0.0 h1:cGa90lZEtR7rgvmXhlp2SoGi/yZBQQ5IycoeiPaL+cY=
 github.com/hypershadow-io/contract/utiliter v1.0.0/go.mod h1:Imjn1ZbU5az2Ziakv/vCgo6kYrVtdHgCb2/MGcfSDFY=
