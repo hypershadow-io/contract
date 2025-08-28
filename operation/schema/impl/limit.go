@@ -31,6 +31,7 @@ type Limit struct {
 	Multiple     *float64 `json:"multiple,omitzero"`
 	Unique       bool     `json:"unique,omitempty"`
 	Pattern      string   `json:"pattern,omitempty"`
+	Format       string   `json:"format,omitempty"`
 }
 
 func (a Limit) IsValid() bool         { return true }
@@ -45,3 +46,4 @@ func (a Limit) GetMultiple() *float64 { return a.Multiple }
 func (a Limit) SetMultiple(v float64) { a.Multiple = &v }
 func (a Limit) IsUnique() bool        { return a.Unique }
 func (a Limit) GetPattern() string    { return a.Pattern }
+func (a Limit) GetFormat() string     { return a.Format }

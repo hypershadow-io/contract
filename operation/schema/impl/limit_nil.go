@@ -13,3 +13,4 @@ func (a limitNil) IsExclusiveMax() bool  { return false }
 func (a limitNil) GetMultiple() *float64 { return nil }
 func (a limitNil) IsUnique() bool        { return false }
 func (a limitNil) GetPattern() string    { return "" }
+func (a limitNil) GetFormat() string     { return "" }

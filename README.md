@@ -119,8 +119,14 @@ The repository consists of multiple independent modules, each contained in its o
     - [operation/model](./operation/model) - defines global Operation model
     - [operation/schema](./operation/schema) - defines Schema interface for Operation structure
     - [operation/schema/impl](./operation/schema/impl) - defines base implementation of Operation Schema interface
+    - [operation/schema/limit](./operation/schema/limit) - collection of interfaces for extending the Limit interface
+        - [operation/schema/limit/format](./operation/schema/limit/format) - defines extends the Operation Schema Limit
+          interface with format value
     - [operation/schema/metainfo](./operation/schema/metainfo) - defines metadata fields for describing Operation Schema
       interface
+    - [operation/schema/propertytype](./operation/schema/propertytype) - collection of additional property types
+        - [operation/schema/propertytype/null](./operation/schema/propertytype/null) - defines an additional property
+          type `null`
     - [operation/setauth](./operation/setauth) - defines an interface for injecting auth values into Operation
       parameters
     - [operation/validate](./operation/validate) - defines an interface for validating parameters against Operation
