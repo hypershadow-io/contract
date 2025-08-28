@@ -24,17 +24,17 @@ func MakePropertyFrom(in schema.Property) Property {
 	}
 	return Property{
 		Ref:         in.GetRef(),
-		Auth:        MakeAuthFrom(in.GetAuth()),
-		Name:        in.GetName(),
-		Description: choice.MakeFrom(in.GetDescription()),
-		Section:     in.GetSection(),
-		Type:        in.GetType(),
-		AllOf:       utilslice.SliceToSlice(in.GetAllOf(), MakePropertyFrom),
-		OneOf:       utilslice.SliceToSlice(in.GetOneOf(), MakePropertyFrom),
-		AnyOf:       utilslice.SliceToSlice(in.GetAnyOf(), MakePropertyFrom),
-		Properties:  utilslice.SliceToSlice(in.GetProperties(), MakePropertyFrom),
-		Required:    in.IsRequired(),
-		Limit:       NewLimitFrom(in.GetLimit()),
+		Auth:        MakeAuthFrom(in.GetAuth(false)),
+		Name:        in.GetName(false),
+		Description: choice.MakeFrom(in.GetDescription(false)),
+		Section:     in.GetSection(false),
+		Type:        in.GetType(false),
+		AllOf:       utilslice.SliceToSlice(in.GetAllOf(false), MakePropertyFrom),
+		OneOf:       utilslice.SliceToSlice(in.GetOneOf(false), MakePropertyFrom),
+		AnyOf:       utilslice.SliceToSlice(in.GetAnyOf(false), MakePropertyFrom),
+		Properties:  utilslice.SliceToSlice(in.GetProperties(false), MakePropertyFrom),
+		Required:    in.IsRequired(false),
+		Limit:       NewLimitFrom(in.GetLimit(false)),
 	}
 }
 
@@ -63,7 +63,7 @@ func (a Property) GetAuth(resolveRef bool) schema.Auth {
 		return a.Auth
 	}
 	if resolveRef {
-		return a.resolve().GetAuth()
+		return a.resolve().GetAuth(resolveRef)
 	}
 	return Auth{}
 }
@@ -73,7 +73,7 @@ func (a Property) GetName(resolveRef bool) string {
 		return a.Name
 	}
 	if resolveRef {
-		return a.resolve().GetName()
+		return a.resolve().GetName(resolveRef)
 	}
 	return ""
 }
@@ -83,7 +83,7 @@ func (a Property) GetDescription(resolveRef bool) choice.Selector[string] {
 		return a.Description
 	}
 	if resolveRef {
-		return a.resolve().GetDescription()
+		return a.resolve().GetDescription(resolveRef)
 	}
 	return choice.Model[string]{}
 }
@@ -93,7 +93,7 @@ func (a Property) GetSection(resolveRef bool) schema.PropertySection {
 		return a.Section
 	}
 	if resolveRef {
-		return a.resolve().GetSection()
+		return a.resolve().GetSection(resolveRef)
 	}
 	return ""
 }
@@ -103,7 +103,7 @@ func (a Property) GetType(resolveRef bool) []schema.PropertyType {
 		return a.Type
 	}
 	if resolveRef {
-		return a.resolve().GetType()
+		return a.resolve().GetType(resolveRef)
 	}
 	return nil
 }
@@ -116,7 +116,7 @@ func (a Property) GetAllOf(resolveRef bool) []schema.Property {
 		})
 	}
 	if resolveRef {
-		return a.resolve().GetAllOf()
+		return a.resolve().GetAllOf(resolveRef)
 	}
 	return nil
 }
@@ -129,7 +129,7 @@ func (a Property) GetOneOf(resolveRef bool) []schema.Property {
 		})
 	}
 	if resolveRef {
-		return a.resolve().GetOneOf()
+		return a.resolve().GetOneOf(resolveRef)
 	}
 	return nil
 }
@@ -142,7 +142,7 @@ func (a Property) GetAnyOf(resolveRef bool) []schema.Property {
 		})
 	}
 	if resolveRef {
-		return a.resolve().GetAnyOf()
+		return a.resolve().GetAnyOf(resolveRef)
 	}
 	return nil
 }
@@ -155,7 +155,7 @@ func (a Property) GetProperties(resolveRef bool) []schema.Property {
 		})
 	}
 	if resolveRef {
-		return a.resolve().GetProperties()
+		return a.resolve().GetProperties(resolveRef)
 	}
 	return nil
 }
@@ -165,7 +165,7 @@ func (a Property) IsRequired(resolveRef bool) bool {
 		return true
 	}
 	if resolveRef {
-		return a.resolve().IsRequired()
+		return a.resolve().IsRequired(resolveRef)
 	}
 	return false
 }
@@ -175,7 +175,7 @@ func (a Property) GetLimit(resolveRef bool) schema.Limit {
 		return a.Limit
 	}
 	if resolveRef {
-		return a.resolve().GetLimit()
+		return a.resolve().GetLimit(resolveRef)
 	}
 	return limitNil{}
 }

@@ -1,4 +1,4 @@
 github.com/hypershadow-io/contract/choice v1.0.0 h1:IWO8j+JiB4MjK0A3kYI27raioGCpzzAQac2UntN6Em4=
 github.com/hypershadow-io/contract/choice v1.0.0/go.mod h1:++x1tYSSErp4johBW+RoR6xWPyepZm95tovs2gDd+wo=
-github.com/hypershadow-io/contract/operation/schema v1.0.3 h1:rz75IL7GJPukwZQ2ZrUg6uyz0cVQ98eQTP++e0/NiQA=
-github.com/hypershadow-io/contract/operation/schema v1.0.3/go.mod h1:jXaIe9lAAOgiz0Nol1MLZ0gkQvpvt511tzSB3kpLVgA=
+github.com/hypershadow-io/contract/operation/schema v1.1.0 h1:sQ68iWKb4Isqrp0kbakQP+2SXR2zQQmPjwHLaLyvRyU=
+github.com/hypershadow-io/contract/operation/schema v1.1.0/go.mod h1:jXaIe9lAAOgiz0Nol1MLZ0gkQvpvt511tzSB3kpLVgA=
