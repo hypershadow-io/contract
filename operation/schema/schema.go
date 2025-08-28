@@ -43,37 +43,37 @@ type (
 		GetRef() string
 
 		// GetAuth returns the authorization configuration for this property.
-		GetAuth() Auth
+		GetAuth(resolveRef bool) Auth
 
 		// GetName returns the name of the property.
-		GetName() string
+		GetName(resolveRef bool) string
 
 		// GetDescription returns a user-friendly description of the property with one selected value and multiple possible options.
-		GetDescription() choice.Selector[string]
+		GetDescription(resolveRef bool) choice.Selector[string]
 
 		// GetSection returns the location (query, header, body, etc.) of this property.
-		GetSection() PropertySection
+		GetSection(resolveRef bool) PropertySection
 
 		// GetType returns the list of data types this property can accept.
-		GetType() []PropertyType
+		GetType(resolveRef bool) []PropertyType
 
 		// GetAllOf returns a list of properties that must all apply (AND).
-		GetAllOf() []Property
+		GetAllOf(resolveRef bool) []Property
 
 		// GetOneOf returns a list where exactly one property must apply (XOR).
-		GetOneOf() []Property
+		GetOneOf(resolveRef bool) []Property
 
 		// GetAnyOf returns a list where any number of properties can apply (OR).
-		GetAnyOf() []Property
+		GetAnyOf(resolveRef bool) []Property
 
 		// GetProperties returns nested properties (used for objects and array).
-		GetProperties() []Property
+		GetProperties(resolveRef bool) []Property
 
 		// IsRequired indicates whether this property must be provided.
-		IsRequired() bool
+		IsRequired(resolveRef bool) bool
 
 		// GetLimit returns validation constraints on the property's value.
-		GetLimit() Limit
+		GetLimit(resolveRef bool) Limit
 	}
 
 	// Auth defines the authorization method required for the associated schema or property.

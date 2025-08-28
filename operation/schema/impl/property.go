@@ -58,93 +58,126 @@ type Property struct {
 func (a Property) IsValid() bool  { return a.Name != "" }
 func (a Property) GetRef() string { return a.Ref }
 
-func (a Property) GetAuth() schema.Auth {
+func (a Property) GetAuth(resolveRef bool) schema.Auth {
 	if a.Auth.IsValid() {
 		return a.Auth
 	}
-	return a.resolve().GetAuth()
+	if resolveRef {
+		return a.resolve().GetAuth()
+	}
+	return Auth{}
 }
 
-func (a Property) GetName() string {
+func (a Property) GetName(resolveRef bool) string {
 	if a.Name != "" {
 		return a.Name
 	}
-	return a.resolve().GetName()
+	if resolveRef {
+		return a.resolve().GetName()
+	}
+	return ""
 }
 
-func (a Property) GetDescription() choice.Selector[string] {
+func (a Property) GetDescription(resolveRef bool) choice.Selector[string] {
 	if len(a.Description.Options) > 0 {
 		return a.Description
 	}
-	return a.resolve().GetDescription()
+	if resolveRef {
+		return a.resolve().GetDescription()
+	}
+	return choice.Model[string]{}
 }
 
-func (a Property) GetSection() schema.PropertySection {
+func (a Property) GetSection(resolveRef bool) schema.PropertySection {
 	if a.Section != "" {
 		return a.Section
 	}
-	return a.resolve().GetSection()
+	if resolveRef {
+		return a.resolve().GetSection()
+	}
+	return ""
 }
 
-func (a Property) GetType() []schema.PropertyType {
+func (a Property) GetType(resolveRef bool) []schema.PropertyType {
 	if len(a.Type) > 0 {
 		return a.Type
 	}
-	return a.resolve().GetType()
+	if resolveRef {
+		return a.resolve().GetType()
+	}
+	return nil
 }
 
-func (a Property) GetAllOf() []schema.Property {
+func (a Property) GetAllOf(resolveRef bool) []schema.Property {
 	if len(a.AllOf) > 0 {
 		return utilslice.SliceToSlice(a.AllOf, func(item Property) schema.Property {
 			item.schema = a.schema
 			return item
 		})
 	}
-	return a.resolve().GetAllOf()
+	if resolveRef {
+		return a.resolve().GetAllOf()
+	}
+	return nil
 }
 
-func (a Property) GetOneOf() []schema.Property {
+func (a Property) GetOneOf(resolveRef bool) []schema.Property {
 	if len(a.OneOf) > 0 {
 		return utilslice.SliceToSlice(a.OneOf, func(item Property) schema.Property {
 			item.schema = a.schema
 			return item
 		})
 	}
-	return a.resolve().GetOneOf()
+	if resolveRef {
+		return a.resolve().GetOneOf()
+	}
+	return nil
 }
 
-func (a Property) GetAnyOf() []schema.Property {
+func (a Property) GetAnyOf(resolveRef bool) []schema.Property {
 	if len(a.AnyOf) > 0 {
 		return utilslice.SliceToSlice(a.AnyOf, func(item Property) schema.Property {
 			item.schema = a.schema
 			return item
 		})
 	}
-	return a.resolve().GetAnyOf()
+	if resolveRef {
+		return a.resolve().GetAnyOf()
+	}
+	return nil
 }
 
-func (a Property) GetProperties() []schema.Property {
+func (a Property) GetProperties(resolveRef bool) []schema.Property {
 	if len(a.Properties) > 0 {
 		return utilslice.SliceToSlice(a.Properties, func(item Property) schema.Property {
 			item.schema = a.schema
 			return item
 		})
 	}
-	return a.resolve().GetProperties()
+	if resolveRef {
+		return a.resolve().GetProperties()
+	}
+	return nil
 }
 
-func (a Property) IsRequired() bool {
+func (a Property) IsRequired(resolveRef bool) bool {
 	if a.Required {
 		return true
 	}
-	return a.resolve().IsRequired()
+	if resolveRef {
+		return a.resolve().IsRequired()
+	}
+	return false
 }
 
-func (a Property) GetLimit() schema.Limit {
+func (a Property) GetLimit(resolveRef bool) schema.Limit {
 	if a.Limit != nil {
 		return a.Limit
 	}
-	return a.resolve().GetLimit()
+	if resolveRef {
+		return a.resolve().GetLimit()
+	}
+	return limitNil{}
 }
 
 // EnsureLimit ensures that the Limit field is initialized.
