@@ -2,7 +2,7 @@ github.com/hypershadow-io/contract/choice v1.0.0 h1:IWO8j+JiB4MjK0A3kYI27raioGCp
 github.com/hypershadow-io/contract/choice v1.0.0/go.mod h1:++x1tYSSErp4johBW+RoR6xWPyepZm95tovs2gDd+wo=
 github.com/hypershadow-io/contract/identity v1.1.0 h1:X3ww04voFxn6Den47k2zQ93LD4xpxBCnDsbaNHNg/kM=
 github.com/hypershadow-io/contract/identity v1.1.0/go.mod h1:KM6GIMWQDCeE0i9pqXVXpl1oTn5HJT85o2qPQAqGuug=
-github.com/hypershadow-io/contract/metainfo/field v1.0.0 h1:ND+OaJCTHArjl22Ug6HdpRMJehiFL2A2vujnEvsPsbY=
-github.com/hypershadow-io/contract/metainfo/field v1.0.0/go.mod h1:nleOlRu8kZNj2KGOu3edp0C/eUtQko9xpRwtBCO4xZ4=
+github.com/hypershadow-io/contract/metainfo/field v1.0.1 h1:M/BqRqV4mQuOf9K4BbqUYctcwFza85CTJQpXvofTPAQ=
+github.com/hypershadow-io/contract/metainfo/field v1.0.1/go.mod h1:nleOlRu8kZNj2KGOu3edp0C/eUtQko9xpRwtBCO4xZ4=
 github.com/hypershadow-io/contract/operation/schema v1.1.0 h1:sQ68iWKb4Isqrp0kbakQP+2SXR2zQQmPjwHLaLyvRyU=
 github.com/hypershadow-io/contract/operation/schema v1.1.0/go.mod h1:jXaIe9lAAOgiz0Nol1MLZ0gkQvpvt511tzSB3kpLVgA=
