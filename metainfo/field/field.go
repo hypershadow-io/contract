@@ -17,18 +17,25 @@ type Field interface {
 
 	// GetRef returns the external reference key for the field, if it is linked to another definition.
 	GetRef() string
+
+	// GetAdditionalPropertiesRef returns the external reference key used for values of additional properties
+	// when the field type is an object. It defines the schema that applies to any dynamically
+	// named keys within the object.
+	GetAdditionalPropertiesRef() string
 }
 
 // Model provides a base implementation of the Field interface.
 type Model struct {
 	identity.Identification
-	Type   string   `json:"type"`   // Field type (e.g. string, int, bool, etc.)
-	Select bool     `json:"select"` // Indicates whether the field supports a predefined set of selectable values
-	Enum   []string `json:"enum"`   // Optional list of allowed enum values
-	Ref    string   `json:"ref"`    // Optional reference key to external definition
+	Type                    string   `json:"type"`                    // Field type (e.g. string, int, bool, etc.)
+	Select                  bool     `json:"select"`                  // Indicates whether the field supports a predefined set of selectable values
+	Enum                    []string `json:"enum"`                    // Optional list of allowed enum values
+	Ref                     string   `json:"ref"`                     // Optional reference key to external definition
+	AdditionalPropertiesRef string   `json:"additionalPropertiesRef"` // Optional additional properties reference key to external definition
 }
 
-func (a Model) GetType() string   { return a.Type }
-func (a Model) IsSelect() bool    { return a.Select }
-func (a Model) GetEnum() []string { return a.Enum }
-func (a Model) GetRef() string    { return a.Ref }
+func (a Model) GetType() string                    { return a.Type }
+func (a Model) IsSelect() bool                     { return a.Select }
+func (a Model) GetEnum() []string                  { return a.Enum }
+func (a Model) GetRef() string                     { return a.Ref }
+func (a Model) GetAdditionalPropertiesRef() string { return a.AdditionalPropertiesRef }
