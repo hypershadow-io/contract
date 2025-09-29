@@ -11,9 +11,12 @@ import (
 type Meta map[string]raw.Message
 
 // Meta converts json.Meta into the internal meta.Meta type.
-func (a Meta) Meta() meta.Meta {
-	m := meta.Make(len(a))
-	for k, v := range a {
+func (a *Meta) Meta() meta.Meta {
+	if a == nil {
+		return nil
+	}
+	m := meta.Make(len(*a))
+	for k, v := range *a {
 		m[k] = []byte(v)
 	}
 	return m
