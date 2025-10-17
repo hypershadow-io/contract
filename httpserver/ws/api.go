@@ -24,6 +24,8 @@ type (
 	Ctx interface {
 		context.Context
 
+		// TODO rathil add Write and Read methods
+
 		// WriteJSON sends the given value to the client as a JSON-encoded message.
 		WriteJSON(value any) error
 

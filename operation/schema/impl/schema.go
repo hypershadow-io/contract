@@ -51,8 +51,11 @@ func (a Schema) GetComponents() map[string]schema.Property {
 	return result
 }
 
-func (a Schema) GetTags() []string            { return a.Tags }
-func (a Schema) GetResponse() schema.Property { return a.Response }
+func (a Schema) GetTags() []string { return a.Tags }
+func (a Schema) GetResponse() schema.Property {
+	a.Response.schema = &a
+	return a.Response
+}
 
 func (a Schema) Resolve(ref string) schema.Property {
 	if ref == "" {
