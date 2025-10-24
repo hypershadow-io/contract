@@ -10,5 +10,5 @@ import (
 type Client interface {
 	// Validate checks the provided parameters against the specified schema.
 	// Returns a slice of field errors or a general error if validation could not be completed.
-	Validate(sch schema.Schema, params map[string]any) ([]fielderror.Error, error)
+	Validate(prop schema.Property, params any) ([]fielderror.Error, error)
 }
