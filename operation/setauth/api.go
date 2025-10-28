@@ -9,5 +9,5 @@ import (
 type Client interface {
 	// SetAuth populates the provided parameters with authorization values
 	// based on the rules defined in the schema.
-	SetAuth(sch schema.Schema, params map[string]any, auth map[string]string) map[string]any
+	SetAuth(sch schema.Schema, params any, auth map[string]string) any
 }
