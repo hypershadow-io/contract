@@ -7,6 +7,12 @@ import (
 
 // Clone - make a copy of Meta.
 func Clone(m meta.Meta) (meta.Meta, error) {
+	if !m.IsValid() {
+		return nil, nil
+	}
+	if m.IsZero() {
+		return make(meta.Meta), nil
+	}
 	data, err := json.Marshal(m)
 	if err != nil {
 		return nil, err
