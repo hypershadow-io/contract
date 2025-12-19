@@ -108,6 +108,7 @@ The repository consists of multiple independent modules, each contained in its o
     - [json/jsonint](./json/jsonint) – defines int64 wrapper for marshaling/unmarshaling as JSON string.
     - [json/raw](./json/raw) – defines raw message equivalent of json.RawMessage.
 - [meta](./meta) - key-value metadata container
+    - [meta/clone](./meta/clone) - creation of a complete copy of metadata
     - [meta/json](./meta/json) - network-safe wrapper for meta.Meta, used for JSON transport and decoding
     - [meta/slog](./meta/slog) - converts meta.Meta into structured slog attributes for logging
 - [metainfo](./metainfo) - defines base MetaInfo abstractions
